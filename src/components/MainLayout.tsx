@@ -28,7 +28,7 @@ export default function MainLayout() {
   };
 
   return (
-    <div className="relative min-h-screen bg-white text-slate-900 selection:bg-[#d97706]/20 selection:text-[#b45309]">
+    <div className="relative min-h-screen bg-white text-slate-900 selection:bg-[#0236A0] selection:text-white">
       {/* Sticky Glass Navbar */}
       <Navbar onOpenQuote={() => handleOpenQuote()} />
 

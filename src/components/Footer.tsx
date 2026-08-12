@@ -46,6 +46,8 @@ export default function Footer({ onOpenQuote }: FooterProps) {
                   alt="Vartitva Health Logo"
                   width={280}
                   height={155}
+                  sizes="(max-width: 640px) 200px, 280px"
+                  loading="lazy"
                   className="h-16 sm:h-20 w-auto object-contain rounded-2xl shadow-xl border border-amber-400/50 group-hover:scale-105 transition-transform"
                 />
               </Link>
@@ -177,12 +179,18 @@ export default function Footer({ onOpenQuote }: FooterProps) {
 
         {/* Bottom Bar & Copyright */}
         <div className="pt-8 border-t border-amber-900/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© {new Date().getFullYear()} Vartitva Health Private Limited. All rights reserved.</p>
+          <div className="space-y-1 text-center sm:text-left">
+            <p>© {new Date().getFullYear()} Vartitva Health Private Limited. All rights reserved.</p>
+            <p className="text-[11px] text-amber-300/80 font-medium">
+              Designed & Managed by Promopact Marketing India Pvt. Ltd.
+            </p>
+          </div>
           <div className="flex items-center gap-6">
             <span className="hover:text-amber-300 transition-colors cursor-pointer">Driven by Trust</span>
             <span className="hover:text-amber-300 transition-colors cursor-pointer">Guided by Care</span>
             <button
               onClick={scrollToTop}
+              aria-label="Scroll back to top"
               className="w-9 h-9 rounded-full bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 flex items-center justify-center transition-colors"
             >
               <ArrowUp className="w-4 h-4" />

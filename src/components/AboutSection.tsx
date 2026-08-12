@@ -60,8 +60,9 @@ export default function AboutSection() {
                     src="/images/about_surgical_team.png"
                     alt="Vartitva Health Surgical Support Team"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    loading="lazy"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    priority
                   />
                   
                   {/* Subtle Gradient Vignette */}
@@ -112,7 +113,7 @@ export default function AboutSection() {
 
                 {/* Lead Paragraph */}
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-                  At Vartitva Health, we go beyond supplying surgical implants—we build trusted partnerships that support better healthcare. By connecting hospitals and surgeons with advanced medical technologies, we help ensure every procedure is backed by precision, reliability, and confidence.
+                  At Vartitva Health, we are dedicated to strengthening healthcare by delivering advanced orthopaedic, spine, neurology, and joint replacement implant solutions. Our commitment is to support hospitals, healthcare institutions, and surgeons with reliable products and responsive service that contribute to better clinical outcomes.
                 </p>
 
                 {/* Middle Callout Box with Users Icon */}
@@ -121,7 +122,7 @@ export default function AboutSection() {
                     <Users className="w-5 h-5 text-[#d97706]" />
                   </div>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                    With a strong commitment to quality, timely service, and professional excellence, we proudly serve healthcare institutions across Delhi, Gurugram, and Sonipat, while expanding our reach to support medical professionals throughout India.
+                    Built on the values of integrity, quality, and professionalism, we focus on creating lasting partnerships through dependable distribution, timely support, and a customer-first approach. As we continue to grow, our mission remains clear—to empower healthcare professionals with innovative surgical solutions while contributing to a healthier future for communities across India.
                   </p>
                 </div>
 

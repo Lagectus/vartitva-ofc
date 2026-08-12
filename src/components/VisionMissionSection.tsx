@@ -36,6 +36,8 @@ export default function VisionMissionSection() {
           src="/images/why_choose_bg.png"
           alt="Globe Watermark"
           fill
+          sizes="(max-width: 1024px) 0vw, 288px"
+          loading="lazy"
           className="object-contain"
         />
       </div>
@@ -45,6 +47,8 @@ export default function VisionMissionSection() {
           src="/images/joint_replacement_implants.png"
           alt="Implant Watermark"
           fill
+          sizes="(max-width: 1024px) 0vw, 320px"
+          loading="lazy"
           className="object-contain"
         />
       </div>

@@ -1,15 +1,25 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-plus-jakarta",
   display: "swap",
+  preload: true,
 });
 
+export const viewport: Viewport = {
+  themeColor: "#090d16",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vartitvahealth.com"),
   title: "Vartitva Health Pvt. Ltd. | Precision Surgical Implant Solutions",
   description:
     "India's premier distributor of world-class Orthopaedic Implants, Neurology Implants, Spine Implants, and Joint Replacement Solutions serving Delhi, Gurugram, and Sonipat.",
@@ -23,6 +33,9 @@ export const metadata: Metadata = {
     "Healthcare Distribution India",
   ],
   authors: [{ name: "Vartitva Health Private Limited" }],
+  alternates: {
+    canonical: "https://vartitvahealth.com",
+  },
   openGraph: {
     title: "Vartitva Health Pvt. Ltd. | Surgical Implant Distribution",
     description:
@@ -31,7 +44,48 @@ export const metadata: Metadata = {
     siteName: "Vartitva Health",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "/images/logo.avif",
+        width: 1200,
+        height: 630,
+        alt: "Vartitva Health Pvt. Ltd.",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vartitva Health Pvt. Ltd. | Precision Surgical Implants",
+    description:
+      "Trusted distributor of Orthopaedic, Spine, Neurology & Joint Implants serving North India.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const jsonLdSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: "Vartitva Health Private Limited",
+  url: "https://vartitvahealth.com",
+  logo: "https://vartitvahealth.com/images/logo.avif",
+  description:
+    "India's premier distributor of world-class Orthopaedic Implants, Neurology Implants, Spine Implants, and Joint Replacement Solutions.",
+  telephone: "+91-9958813695",
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "Delhi NCR",
+    addressCountry: "IN",
+  },
+  areaServed: ["Delhi", "Gurugram", "Sonipat", "North India"],
+  medicalSpecialty: [
+    "Orthopedics",
+    "Neurosurgery",
+    "Spine Surgery",
+    "Joint Replacement",
+  ],
 };
 
 export default function RootLayout({
@@ -45,8 +99,15 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} scroll-smooth`}
       suppressHydrationWarning
     >
+      <head>
+        <Script
+          id="json-ld-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+        />
+      </head>
       <body
-        className="bg-white text-slate-900 selection:bg-[#e11d48]/20 selection:text-[#0f4c81] antialiased min-h-screen flex flex-col"
+        className="bg-white text-slate-900 selection:bg-[#0236A0] selection:text-white antialiased min-h-screen flex flex-col overflow-x-hidden"
         suppressHydrationWarning
       >
         {children}

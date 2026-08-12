@@ -15,14 +15,18 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
   const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const isPastThreshold = window.scrollY > 20;
+          setScrolled((prev) => (prev !== isPastThreshold ? isPastThreshold : prev));
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -37,12 +41,13 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Official Logo Image - Uncropped */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" aria-label="Vartitva Health Homepage" className="flex items-center gap-3 group">
             <Image
               src="/images/logo.avif"
               alt="Vartitva Health Logo"
               width={240}
               height={135}
+              sizes="(max-width: 640px) 180px, 240px"
               className="h-12 sm:h-14 w-auto object-contain rounded-xl shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform border border-amber-300/50"
               priority
             />
@@ -148,7 +153,9 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`lg:hidden p-2 rounded-xl transition-colors border ${
+            aria-label="Toggle Navigation Menu"
+            aria-expanded={mobileMenuOpen}
+            className={`lg:hidden p-2.5 rounded-xl transition-colors border ${
               scrolled
                 ? "bg-amber-50 text-slate-800 hover:text-[#d97706] border-amber-200"
                 : "bg-slate-900/60 text-white hover:text-amber-300 border-white/20 backdrop-blur-md"

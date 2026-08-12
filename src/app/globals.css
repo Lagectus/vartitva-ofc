@@ -19,6 +19,16 @@
   }
 }
 
+/* Global Selection Highlight */
+::selection {
+  background-color: #0236A0 !important;
+  color: #ffffff !important;
+}
+::-moz-selection {
+  background-color: #0236A0 !important;
+  color: #ffffff !important;
+}
+
 /* Custom Utilities */
 @layer utilities {
   .bg-grid-pattern {

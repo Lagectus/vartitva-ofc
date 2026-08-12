@@ -63,6 +63,8 @@ export default function QuoteModal({ isOpen, onClose, defaultSpeciality = "Ortho
               alt="Vartitva Health Logo"
               width={180}
               height={100}
+              sizes="180px"
+              loading="lazy"
               className="h-11 sm:h-12 w-auto object-contain rounded-xl shadow-sm border border-amber-300/80"
             />
             <div>

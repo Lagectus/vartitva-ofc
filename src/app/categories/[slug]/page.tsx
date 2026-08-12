@@ -55,7 +55,7 @@ export default function CategoryPage({ params }: PageProps) {
   };
 
   return (
-    <div className="relative min-h-screen bg-white text-slate-900 selection:bg-[#d97706]/20 selection:text-[#b45309]">
+    <div className="relative min-h-screen bg-white text-slate-900 selection:bg-[#0236A0] selection:text-white">
       {/* Sticky Glass Navbar */}
       <Navbar onOpenQuote={() => handleOpenInquiry()} />
 
@@ -69,6 +69,7 @@ export default function CategoryPage({ params }: PageProps) {
               src={category.image}
               alt={category.title}
               fill
+              sizes="100vw"
               className="object-cover filter brightness-[0.8]"
               priority
             />

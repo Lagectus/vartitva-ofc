@@ -107,8 +107,9 @@ export default function WhyChooseUs() {
                     src="/images/joint_replacement_implants.png"
                     alt="Knee & Joint Replacement Implant"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    loading="lazy"
                     className="object-cover scale-105"
-                    priority
                   />
                 </div>
               </div>

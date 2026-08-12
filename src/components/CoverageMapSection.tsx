@@ -34,6 +34,8 @@ export default function CoverageMapSection() {
           src="/images/areas_serve_bg.png"
           alt="Areas We Serve NCR City Skyline"
           fill
+          sizes="100vw"
+          loading="lazy"
           className="object-cover"
         />
       </div>

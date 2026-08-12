@@ -18,13 +18,11 @@ export default function HeroSection({ onOpenQuote }: HeroSectionProps) {
           loop
           muted
           playsInline
+          preload="none"
           poster="/images/hero_bg_medical.png"
           className="w-full h-full object-cover scale-100 filter brightness-[0.95] contrast-[1.02]"
         >
           <source src="/images/HERO-BG.mp4" type="video/mp4" />
-          <source src="/videos/hero_bg.mp4" type="video/mp4" />
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-medical-research-laboratory-41551-large.mp4" type="video/mp4" />
-          <source src="https://cdn.coverr.co/videos/coverr-a-doctor-looking-at-a-medical-screen-4618/1080p.mp4" type="video/mp4" />
         </video>
 
         {/* Minimal Light Overlay for Maximum Video Clarity */}
@@ -71,13 +69,13 @@ export default function HeroSection({ onOpenQuote }: HeroSectionProps) {
 
         {/* Verbatim Paragraphs */}
         <ScrollReveal variant="fade-up" delay={0.35}>
-          <div className="space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed font-normal max-w-3xl mx-auto">
-            <p>
+          <div className="space-y-4 max-w-3xl mx-auto text-slate-200 text-base sm:text-lg leading-relaxed font-normal">
+            <p className="text-slate-200 drop-shadow-sm">
               At Vartitva Health, we go beyond supplying surgical implants—we build trusted partnerships that support better healthcare. By connecting hospitals and surgeons with advanced medical technologies, we help ensure every procedure is backed by precision, reliability, and confidence.
             </p>
 
-            <p className="text-slate-400 text-sm sm:text-base">
-              With a strong commitment to quality, timely service, and professional excellence, we proudly serve healthcare institutions across Delhi, Gurugram, and Sonipat, while expanding our reach to support medical professionals throughout India.
+            <p className="text-slate-200 drop-shadow-sm">
+              With a strong commitment to quality, timely service, and professional excellence, we proudly serve healthcare institutions across <span className="text-amber-300 font-semibold">Delhi, Gurugram, and Sonipat</span>, while expanding our reach to support medical professionals throughout India.
             </p>
           </div>
         </ScrollReveal>

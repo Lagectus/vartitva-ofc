@@ -25,9 +25,10 @@ export default function CTASection({ onOpenQuote }: CTASectionProps) {
                   src="/images/partner_healthcare_handshake.png"
                   alt="Partner With Vartitva Health"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  loading="lazy"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-950/90 via-slate-950/50 to-transparent" />
                 
                 <div className="absolute top-4 left-4 z-10">
                   <span className="px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md text-amber-300 text-xs font-bold border border-amber-400/30 flex items-center gap-1.5">

@@ -18,6 +18,8 @@ export default function Hero3DCanvas() {
     let animationFrameId: number;
     let handleMouseMove: ((event: MouseEvent) => void) | undefined;
     let handleResize: (() => void) | undefined;
+    let isIntersecting = true;
+    let observer: IntersectionObserver | undefined;
 
     // Dynamically import Three.js in browser context only
     import("three").then((THREE) => {
@@ -36,17 +38,14 @@ export default function Hero3DCanvas() {
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-      // Clear existing canvas if any
       while (container.firstChild) {
         container.removeChild(container.firstChild);
       }
       container.appendChild(renderer.domElement);
 
-      // Main Group
       const mainGroup = new THREE.Group();
       scene.add(mainGroup);
 
-      // 1. Titanium Gold Helix with Warm Amber Accents
       const helixGroup = new THREE.Group();
       mainGroup.add(helixGroup);
 
@@ -60,7 +59,6 @@ export default function Hero3DCanvas() {
         reflectivity: 0.9,
       });
 
-      // Surgical Amber Gold Material
       const rubyRedMaterial = new THREE.MeshPhysicalMaterial({
         color: 0xf59e0b,
         emissive: 0xb45309,
@@ -81,6 +79,7 @@ export default function Hero3DCanvas() {
       const nodeCount = 18;
       const radius = 1.8;
       const heightSpan = 7;
+      const geometriesToDispose: Array<{ dispose: () => void }> = [];
 
       for (let i = 0; i < nodeCount; i++) {
         const t = i / nodeCount;
@@ -89,13 +88,17 @@ export default function Hero3DCanvas() {
 
         const xA = Math.cos(angle) * radius;
         const zA = Math.sin(angle) * radius;
-        const meshA = new THREE.Mesh(new THREE.SphereGeometry(0.28, 32, 32), titaniumMaterial);
+        const sphereGeoA = new THREE.SphereGeometry(0.28, 24, 24);
+        geometriesToDispose.push(sphereGeoA);
+        const meshA = new THREE.Mesh(sphereGeoA, titaniumMaterial);
         meshA.position.set(xA, y, zA);
         helixGroup.add(meshA);
 
         const xB = Math.cos(angle + Math.PI) * radius;
         const zB = Math.sin(angle + Math.PI) * radius;
-        const meshB = new THREE.Mesh(new THREE.SphereGeometry(0.28, 32, 32), rubyRedMaterial);
+        const sphereGeoB = new THREE.SphereGeometry(0.28, 24, 24);
+        geometriesToDispose.push(sphereGeoB);
+        const meshB = new THREE.Mesh(sphereGeoB, rubyRedMaterial);
         meshB.position.set(xB, y, zB);
         helixGroup.add(meshB);
 
@@ -104,11 +107,13 @@ export default function Hero3DCanvas() {
             new THREE.Vector3(xA, y, zA),
             new THREE.Vector3(xB, y, zB)
           );
-          const barGeo = new THREE.TubeGeometry(barCurve, 12, 0.08, 16, false);
+          const barGeo = new THREE.TubeGeometry(barCurve, 8, 0.08, 12, false);
+          geometriesToDispose.push(barGeo);
           const barMesh = new THREE.Mesh(barGeo, titaniumMaterial);
           helixGroup.add(barMesh);
 
-          const ringGeo = new THREE.TorusGeometry(radius * 1.15, 0.04, 16, 64);
+          const ringGeo = new THREE.TorusGeometry(radius * 1.15, 0.04, 12, 48);
+          geometriesToDispose.push(ringGeo);
           const ringMesh = new THREE.Mesh(ringGeo, glassMaterial);
           ringMesh.position.set(0, y, 0);
           ringMesh.rotation.x = Math.PI / 2;
@@ -116,19 +121,21 @@ export default function Hero3DCanvas() {
         }
       }
 
-      const coreRingGeo = new THREE.TorusGeometry(3.2, 0.12, 32, 100);
+      const coreRingGeo = new THREE.TorusGeometry(3.2, 0.12, 24, 64);
+      geometriesToDispose.push(coreRingGeo);
       const coreRing = new THREE.Mesh(coreRingGeo, rubyRedMaterial);
       coreRing.rotation.x = Math.PI / 3;
       mainGroup.add(coreRing);
 
-      const outerRingGeo = new THREE.TorusGeometry(4.2, 0.06, 32, 100);
+      const outerRingGeo = new THREE.TorusGeometry(4.2, 0.06, 24, 64);
+      geometriesToDispose.push(outerRingGeo);
       const outerRing = new THREE.Mesh(outerRingGeo, glassMaterial);
       outerRing.rotation.y = Math.PI / 4;
       mainGroup.add(outerRing);
 
-      // 2. Gold Amber Particles
-      const particleCount = 180;
+      const particleCount = 140;
       const particleGeo = new THREE.BufferGeometry();
+      geometriesToDispose.push(particleGeo);
       const particlePositions = new Float32Array(particleCount * 3);
 
       for (let i = 0; i < particleCount * 3; i += 3) {
@@ -150,7 +157,6 @@ export default function Hero3DCanvas() {
       const particles = new THREE.Points(particleGeo, particleMat);
       scene.add(particles);
 
-      // 3. Lighting
       const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
       scene.add(ambientLight);
 
@@ -172,7 +178,7 @@ export default function Hero3DCanvas() {
       let targetY = 0;
 
       handleMouseMove = (event: MouseEvent) => {
-        if (!container) return;
+        if (!container || !isIntersecting) return;
         const rect = container.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
@@ -180,30 +186,43 @@ export default function Hero3DCanvas() {
         mouseY = -(y / rect.height - 0.5) * 2;
       };
 
-      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
       let clock = new THREE.Clock();
 
       const animate = () => {
+        if (isIntersecting) {
+          const elapsedTime = clock.getElapsedTime();
+
+          targetX += (mouseX - targetX) * 0.05;
+          targetY += (mouseY - targetY) * 0.05;
+
+          helixGroup.rotation.y = elapsedTime * 0.35;
+          coreRing.rotation.z = elapsedTime * 0.2;
+          outerRing.rotation.x = elapsedTime * -0.15;
+          particles.rotation.y = elapsedTime * 0.05;
+
+          mainGroup.rotation.y = targetX * 0.4;
+          mainGroup.rotation.x = -targetY * 0.3;
+
+          mouseLight.position.x = targetX * 8;
+          mouseLight.position.y = targetY * 8;
+
+          renderer.render(scene, camera);
+        }
         animationFrameId = requestAnimationFrame(animate);
-        const elapsedTime = clock.getElapsedTime();
-
-        targetX += (mouseX - targetX) * 0.05;
-        targetY += (mouseY - targetY) * 0.05;
-
-        helixGroup.rotation.y = elapsedTime * 0.35;
-        coreRing.rotation.z = elapsedTime * 0.2;
-        outerRing.rotation.x = elapsedTime * -0.15;
-        particles.rotation.y = elapsedTime * 0.05;
-
-        mainGroup.rotation.y = targetX * 0.4;
-        mainGroup.rotation.x = -targetY * 0.3;
-
-        mouseLight.position.x = targetX * 8;
-        mouseLight.position.y = targetY * 8;
-
-        renderer.render(scene, camera);
       };
+
+      // Viewport IntersectionObserver to pause loop when out of screen
+      if ("IntersectionObserver" in window) {
+        observer = new IntersectionObserver(
+          ([entry]) => {
+            isIntersecting = entry.isIntersecting;
+          },
+          { threshold: 0.1 }
+        );
+        observer.observe(container);
+      }
 
       animate();
 
@@ -218,7 +237,22 @@ export default function Hero3DCanvas() {
         renderer.setSize(newWidth, newHeight);
       };
 
-      window.addEventListener("resize", handleResize);
+      window.addEventListener("resize", handleResize, { passive: true });
+
+      // Clean up Three.js WebGL resources on unmount
+      return () => {
+        if (observer) observer.disconnect();
+        if (handleMouseMove) window.removeEventListener("mousemove", handleMouseMove);
+        if (handleResize) window.removeEventListener("resize", handleResize);
+        if (animationFrameId) cancelAnimationFrame(animationFrameId);
+
+        geometriesToDispose.forEach((geo) => geo.dispose());
+        titaniumMaterial.dispose();
+        rubyRedMaterial.dispose();
+        glassMaterial.dispose();
+        particleMat.dispose();
+        renderer.dispose();
+      };
     });
 
     return () => {
@@ -229,11 +263,7 @@ export default function Hero3DCanvas() {
   }, [isMounted]);
 
   if (!isMounted) {
-    return (
-      <div className="relative w-full h-full min-h-[480px] lg:min-h-[580px] flex items-center justify-center">
-        <div className="w-16 h-16 rounded-full border-4 border-[#e11d48]/20 border-t-[#e11d48] animate-spin" />
-      </div>
-    );
+    return <div className="relative w-full h-full min-h-[480px] lg:min-h-[580px]" />;
   }
 
   return (

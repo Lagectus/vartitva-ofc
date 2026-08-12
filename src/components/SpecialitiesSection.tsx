@@ -78,6 +78,8 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
           src="/images/joint_replacement_implants.png"
           alt="Watermark"
           fill
+          sizes="(max-width: 1024px) 0vw, 320px"
+          loading="lazy"
           className="object-contain"
         />
       </div>
@@ -180,8 +182,9 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
                       src={item.image}
                       alt={item.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, 42vw"
+                      loading="lazy"
                       className="object-cover group-hover:scale-108 transition-transform duration-700 filter brightness-[0.95]"
-                      priority
                     />
                     
                     {/* Vignette Overlay */}
