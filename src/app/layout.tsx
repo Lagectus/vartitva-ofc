@@ -40,8 +40,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} scroll-smooth`}>
-      <body className="bg-white text-slate-900 selection:bg-[#00b8a9]/20 selection:text-[#0f4c81] antialiased min-h-screen flex flex-col">
+    <html
+      lang="en"
+      className={`${plusJakartaSans.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
+      <body
+        className="bg-white text-slate-900 selection:bg-[#e11d48]/20 selection:text-[#0f4c81] antialiased min-h-screen flex flex-col"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>

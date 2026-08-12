@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { X, CheckCircle, PhoneCall, Send, ShieldCheck, Sparkles } from "lucide-react";
-import confetti from "canvas-confetti";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -24,15 +24,21 @@ export default function QuoteModal({ isOpen, onClose, defaultSpeciality = "Ortho
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    confetti({
-      particleCount: 80,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ["#0f4c81", "#2563eb", "#00b8a9"],
-    });
+    try {
+      const confettiModule = await import("canvas-confetti");
+      const confetti = confettiModule.default || confettiModule;
+      confetti({
+        particleCount: 80,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ["#d97706", "#f59e0b", "#fde047"],
+      });
+    } catch (err) {
+      // Fallback if confetti fails
+    }
   };
 
   const handleReset = () => {
@@ -47,20 +53,24 @@ export default function QuoteModal({ isOpen, onClose, defaultSpeciality = "Ortho
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Decorative Gradient Line */}
-        <div className="h-2 w-full bg-gradient-to-r from-[#0f4c81] via-[#2563eb] to-[#00b8a9]" />
+        <div className="h-2 w-full bg-gradient-to-r from-[#d97706] via-[#f59e0b] to-[#fde047]" />
 
         {/* Modal Header */}
         <div className="flex items-center justify-between p-6 pb-4 border-b border-slate-100">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#0f4c81] to-[#2563eb] flex items-center justify-center text-white font-bold shadow-md shadow-blue-500/20">
-              V
-            </div>
+            <Image
+              src="/images/logo.avif"
+              alt="Vartitva Health Logo"
+              width={180}
+              height={100}
+              className="h-11 sm:h-12 w-auto object-contain rounded-xl shadow-sm border border-amber-300/80"
+            />
             <div>
               <h3 className="text-xl font-bold text-slate-900 tracking-tight">
                 Request Implant Quotation
               </h3>
               <p className="text-xs text-slate-500 flex items-center gap-1.5 mt-0.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#00b8a9]" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#d97706]" />
                 Direct Hospital & Surgeon Procurement Support
               </p>
             </div>
@@ -76,7 +86,7 @@ export default function QuoteModal({ isOpen, onClose, defaultSpeciality = "Ortho
         {/* Modal Content */}
         {submitted ? (
           <div className="p-8 text-center space-y-6">
-            <div className="w-16 h-16 rounded-full bg-[#00b8a9]/10 text-[#00b8a9] flex items-center justify-center mx-auto animate-bounce">
+            <div className="w-16 h-16 rounded-full bg-amber-500/10 text-[#d97706] flex items-center justify-center mx-auto animate-bounce">
               <CheckCircle className="w-10 h-10" />
             </div>
             <div>
@@ -84,18 +94,18 @@ export default function QuoteModal({ isOpen, onClose, defaultSpeciality = "Ortho
                 Inquiry Received!
               </h4>
               <p className="text-sm text-slate-600 mt-2 max-w-md mx-auto">
-                Thank you for contacting <span className="font-semibold text-[#0f4c81]">Vartitva Health</span>. Our surgical implant specialist will review your request and get back to you within 30 minutes.
+                Thank you for contacting <span className="font-semibold text-[#d97706]">Vartitva Health</span>. Our surgical implant specialist will review your request and get back to you within 30 minutes.
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-between gap-4 text-left">
+            <div className="p-4 rounded-2xl bg-amber-50/60 border border-amber-200 flex items-center justify-between gap-4 text-left">
               <div>
-                <p className="text-xs text-slate-500 font-medium">Need Immediate Surgical Supply?</p>
+                <p className="text-xs text-slate-600 font-medium">Need Immediate Surgical Supply?</p>
                 <p className="text-sm font-bold text-slate-900">+91 9958813695</p>
               </div>
               <a
                 href="tel:9958813695"
-                className="px-4 py-2 bg-[#0f4c81] text-white rounded-xl text-xs font-semibold hover:bg-[#2563eb] transition-colors flex items-center gap-2"
+                className="px-4 py-2 bg-[#d97706] text-slate-950 font-extrabold rounded-xl text-xs hover:bg-[#f59e0b] transition-colors flex items-center gap-2"
               >
                 <PhoneCall className="w-3.5 h-3.5" /> Call Now
               </a>
@@ -121,7 +131,7 @@ export default function QuoteModal({ isOpen, onClose, defaultSpeciality = "Ortho
                   placeholder="Dr. Rajesh Sharma"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-transparent transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] focus:border-transparent transition-all"
                 />
               </div>
 
@@ -135,7 +145,7 @@ export default function QuoteModal({ isOpen, onClose, defaultSpeciality = "Ortho
                   placeholder="Max / Fortis / Medanta"
                   value={formData.hospital}
                   onChange={(e) => setFormData({ ...formData, hospital: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-transparent transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] focus:border-transparent transition-all"
                 />
               </div>
             </div>
@@ -151,7 +161,7 @@ export default function QuoteModal({ isOpen, onClose, defaultSpeciality = "Ortho
                   placeholder="9958813695"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-transparent transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] focus:border-transparent transition-all"
                 />
               </div>
 
@@ -162,7 +172,7 @@ export default function QuoteModal({ isOpen, onClose, defaultSpeciality = "Ortho
                 <select
                   value={formData.city}
                   onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-transparent transition-all bg-white"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] focus:border-transparent transition-all bg-white"
                 >
                   <option value="Delhi">Delhi</option>
                   <option value="Gurugram">Gurugram</option>
@@ -182,7 +192,7 @@ export default function QuoteModal({ isOpen, onClose, defaultSpeciality = "Ortho
                   placeholder="doctor@hospital.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-transparent transition-all"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] focus:border-transparent transition-all"
                 />
               </div>
 
@@ -193,7 +203,7 @@ export default function QuoteModal({ isOpen, onClose, defaultSpeciality = "Ortho
                 <select
                   value={formData.speciality}
                   onChange={(e) => setFormData({ ...formData, speciality: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-transparent transition-all bg-white font-medium text-[#0f4c81]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] focus:border-transparent transition-all bg-white font-medium text-[#b45309]"
                 >
                   <option value="Orthopaedics">Orthopaedic Implants</option>
                   <option value="Neurology">Neurology Implants</option>
@@ -213,16 +223,16 @@ export default function QuoteModal({ isOpen, onClose, defaultSpeciality = "Ortho
                 placeholder="Mention specific implant specs, sizing, quantity, or urgency..."
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-transparent transition-all resize-none"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] focus:border-transparent transition-all resize-none"
               />
             </div>
 
             <div className="pt-2 flex items-center gap-3">
               <button
                 type="submit"
-                className="flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#0f4c81] via-[#2563eb] to-[#00b8a9] text-white font-bold text-sm shadow-lg shadow-blue-500/25 hover:shadow-xl hover:opacity-95 transition-all flex items-center justify-center gap-2 group"
+                className="flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#d97706] via-[#f59e0b] to-[#d97706] text-slate-950 font-extrabold text-sm shadow-lg shadow-amber-500/25 hover:shadow-xl hover:opacity-95 transition-all flex items-center justify-center gap-2 group"
               >
-                <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <Send className="w-4 h-4 text-slate-950 group-hover:translate-x-1 transition-transform" />
                 Submit Direct Quotation Request
               </button>
             </div>
