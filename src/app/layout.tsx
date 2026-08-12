@@ -59,6 +59,13 @@ export const metadata: Metadata = {
     description:
       "Trusted distributor of Orthopaedic, Spine, Neurology & Joint Implants serving North India.",
   },
+  icons: {
+    icon: [
+      { url: "/images/logo.avif", type: "image/avif" },
+    ],
+    shortcut: "/images/logo.avif",
+    apple: "/images/logo.avif",
+  },
   robots: {
     index: true,
     follow: true,
@@ -100,6 +107,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link rel="icon" href="/images/logo.avif" type="image/avif" />
+        <link rel="apple-touch-icon" href="/images/logo.avif" />
         <Script
           id="json-ld-schema"
           type="application/ld+json"
