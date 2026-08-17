@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MessageSquare, PackageCheck, Truck, Headphones, Handshake, CheckCircle2 } from "lucide-react";
+import { MessageSquare, PackageCheck, Truck, Headphones, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function MedicalProcess() {
@@ -30,54 +30,41 @@ export default function MedicalProcess() {
     offset: ["start start", "end end"],
   });
 
-  // Transform vertical scroll into horizontal translation, stopping card 05 right at the edge of the viewport
   const x = useTransform(scrollYProgress, [0.05, 0.92], [0, -scrollRange]);
 
   const steps = [
     {
       number: "01",
-      title: "Understanding Requirements",
+      title: "Understand",
       icon: MessageSquare,
-      description:
-        "We begin by understanding the specific needs of hospitals and surgeons to provide suitable implant solutions aligned with clinical requirements.",
-      tag: "Clinical Consultation",
+      description: "We understand your surgical requirements.",
+      tag: "Surgical Requirement Analysis",
     },
     {
       number: "02",
-      title: "Product Selection & Coordination",
+      title: "Coordinate",
       icon: PackageCheck,
-      description:
-        "Our team focuses on delivering appropriate healthcare solutions through careful product selection and seamless coordination with trusted partners.",
-      tag: "Precision Matching",
+      description: "We coordinate suitable implant solutions.",
+      tag: "Implant Solution Matching",
     },
     {
       number: "03",
-      title: "Timely Distribution Support",
+      title: "Deliver",
       icon: Truck,
-      description:
-        "We ensure efficient handling and timely delivery to help healthcare professionals manage surgical requirements effectively.",
-      tag: "Express Logistics",
+      description: "We ensure timely distribution.",
+      tag: "Timely Distribution Support",
     },
     {
       number: "04",
-      title: "Continuous Assistance",
+      title: "Support",
       icon: Headphones,
-      description:
-        "Our support extends beyond product delivery through professional coordination, responsive communication, and long-term partnership building.",
-      tag: "24/7 Surgical Support",
-    },
-    {
-      number: "05",
-      title: "Building Long-Term Relationships",
-      icon: Handshake,
-      description:
-        "We believe in creating lasting relationships with hospitals and surgeons through trust, transparency, and consistent service.",
-      tag: "Institutional Trust",
+      description: "We provide continued professional assistance.",
+      tag: "Professional Support",
     },
   ];
 
   return (
-    <section ref={targetRef} id="process" className="relative h-[250vh] sm:h-[290vh] bg-gradient-to-b from-white via-amber-50/30 to-white">
+    <section ref={targetRef} id="process" className="relative h-[220vh] sm:h-[250vh] bg-gradient-to-b from-white via-amber-50/30 to-white">
       {/* Sticky Fullscreen Container */}
       <div className="sticky top-0 h-screen flex flex-col justify-between py-10 sm:py-14 overflow-hidden">
         
@@ -90,7 +77,7 @@ export default function MedicalProcess() {
           <ScrollReveal variant="fade-down">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100/80 text-[#d97706] text-xs font-extrabold uppercase tracking-wider border border-amber-300/80 shadow-sm">
               <Truck className="w-4 h-4 text-[#d97706]" />
-              Interactive Process Flow
+              Structured Delivery Flow
             </div>
           </ScrollReveal>
 
@@ -101,8 +88,8 @@ export default function MedicalProcess() {
           </ScrollReveal>
 
           <ScrollReveal variant="fade-up" delay={0.2}>
-            <p className="text-base sm:text-xl font-bold text-[#b45309] max-w-2xl mx-auto">
-              A Reliable Approach Towards Better Healthcare Support
+            <p className="text-xl sm:text-3xl font-black text-[#b45309] max-w-2xl mx-auto">
+              Simple. Structured. Reliable.
             </p>
           </ScrollReveal>
         </div>
@@ -119,7 +106,7 @@ export default function MedicalProcess() {
               return (
                 <div
                   key={idx}
-                  className="w-[310px] sm:w-[410px] shrink-0 flex-shrink-0 p-8 rounded-3xl bg-white border-2 border-amber-200/80 hover:border-[#d97706] shadow-xl shadow-amber-950/5 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+                  className="w-[300px] sm:w-[380px] shrink-0 flex-shrink-0 p-8 rounded-3xl bg-white border-2 border-amber-200/80 hover:border-[#d97706] shadow-xl shadow-amber-950/5 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
                 >
                   {/* Subtle Top Card Glow Highlight */}
                   <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -138,10 +125,10 @@ export default function MedicalProcess() {
                     {/* Step Title & Description */}
                     <div className="space-y-3">
                       <h3 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#d97706] transition-colors leading-tight">
-                        {step.title}
+                        {step.number} — {step.title}
                       </h3>
 
-                      <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                      <p className="text-base text-slate-700 leading-relaxed font-medium">
                         {step.description}
                       </p>
                     </div>
@@ -154,7 +141,7 @@ export default function MedicalProcess() {
                       <span>{step.tag}</span>
                     </div>
                     <span className="text-[10px] font-bold text-amber-600/90 group-hover:translate-x-1 transition-transform">
-                      Step {step.number} of 05 →
+                      Step {step.number} of 04 →
                     </span>
                   </div>
                 </div>

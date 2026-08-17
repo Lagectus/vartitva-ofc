@@ -10,40 +10,36 @@ import {
   HeartHandshake,
   Sparkles,
   ChevronDown,
+  Award,
 } from "lucide-react";
 import ScrollReveal, { ScrollRevealStagger, ScrollRevealItem } from "@/components/ScrollReveal";
 
 export default function WhyChooseUs() {
   const features = [
     {
-      title: "Quality-Focused Approach",
-      description:
-        "We provide carefully selected implant solutions that meet the evolving requirements of modern healthcare practices.",
+      title: "Quality-Focused",
+      description: "Carefully selected implant solutions for modern surgical requirements.",
       icon: ShieldCheck,
     },
     {
-      title: "Reliable Distribution Support",
-      description:
-        "Our efficient supply network ensures timely availability of products whenever healthcare professionals need them.",
+      title: "Reliable Availability",
+      description: "Efficient distribution for timely product access.",
       icon: Truck,
     },
     {
-      title: "Professional Partnership",
-      description:
-        "We believe in building long-term relationships through transparency, commitment, and dedicated support.",
-      icon: Handshake,
-    },
-    {
-      title: "Advanced Healthcare Solutions",
-      description:
-        "We continuously work towards bringing innovative medical technologies that support better surgical outcomes.",
-      icon: PlusCircle,
-    },
-    {
-      title: "Customer-Centric Service",
-      description:
-        "From product selection to post-delivery assistance, we focus on providing a smooth and reliable experience for our partners.",
+      title: "Professional Support",
+      description: "Responsive coordination for hospitals and surgeons.",
       icon: Headphones,
+    },
+    {
+      title: "Healthcare Expertise",
+      description: "Focused solutions across key surgical specialities.",
+      icon: Award,
+    },
+    {
+      title: "Long-Term Partnership",
+      description: "Building relationships through trust and transparency.",
+      icon: Handshake,
     },
   ];
 
@@ -80,14 +76,10 @@ export default function WhyChooseUs() {
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-300" />
               </div>
 
-              {/* Sub-headline & Description */}
-              <h3 className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight pt-2">
-                Your Trusted Partner for Reliable Surgical Implant Solutions
+              {/* Sub-headline */}
+              <h3 className="text-lg sm:text-2xl font-black text-slate-900 tracking-tight pt-2">
+                A Trusted Partner in Surgical Healthcare
               </h3>
-
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal pt-1">
-                At Vartitva Health, we understand that every surgical procedure demands accuracy, reliability, and timely support. Our approach is focused on delivering dependable healthcare solutions that help medical professionals perform with confidence.
-              </p>
             </ScrollReveal>
           </div>
 
@@ -138,11 +130,11 @@ export default function WhyChooseUs() {
 
                   {/* Card Content */}
                   <div className="space-y-2 mt-2">
-                    <h4 className="text-xs sm:text-sm font-black text-slate-900 group-hover:text-[#d97706] transition-colors leading-snug">
+                    <h4 className="text-base sm:text-lg font-black text-slate-900 group-hover:text-[#d97706] transition-colors leading-snug">
                       {feature.title}
                     </h4>
 
-                    <p className="text-[11px] text-slate-600 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
                       {feature.description}
                     </p>
                   </div>
@@ -157,7 +149,7 @@ export default function WhyChooseUs() {
                 <div className="text-center pt-5">
                   <span className="text-[10px] font-extrabold text-[#d97706] tracking-wider uppercase flex items-center justify-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
-                    Vartitva Commitment
+                    Vartitva Health
                     <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
                   </span>
                 </div>
@@ -166,45 +158,8 @@ export default function WhyChooseUs() {
           })}
         </ScrollRevealStagger>
 
-        {/* Bottom Motto Pill Banner */}
-        <ScrollReveal variant="fade-up" delay={0.4} className="mt-14 relative z-10">
-          <div className="max-w-4xl mx-auto p-4 sm:p-5 rounded-full bg-white/95 backdrop-blur-xl border border-amber-200/90 shadow-xl shadow-amber-950/5 flex flex-col md:flex-row items-center justify-between gap-6 px-6 sm:px-8">
-            
-            {/* Left Motto Text */}
-            <div className="flex items-center gap-4 text-left">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#d97706] to-[#f59e0b] text-white flex items-center justify-center flex-shrink-0 shadow-md">
-                <HeartHandshake className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h5 className="text-sm sm:text-base font-bold text-slate-900 leading-tight">
-                  Driven by Trust. Guided by Care.
-                </h5>
-                <p className="text-xs sm:text-sm font-black text-[#d97706] leading-tight">
-                  Committed to Better Outcomes.
-                </p>
-              </div>
-            </div>
-
-            {/* Right Side 3 Indicators */}
-            <div className="flex items-center gap-4 sm:gap-6 divide-x divide-amber-200/70">
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-700">
-                <ShieldCheck className="w-4 h-4 text-[#d97706] flex-shrink-0" />
-                <span>Trusted Support</span>
-              </div>
-              <div className="pl-4 sm:pl-6 flex items-center gap-2 text-xs font-bold text-slate-700">
-                <Sparkles className="w-4 h-4 text-[#d97706] flex-shrink-0" />
-                <span>Reliable Solutions</span>
-              </div>
-              <div className="pl-4 sm:pl-6 flex items-center gap-2 text-xs font-bold text-slate-700">
-                <Handshake className="w-4 h-4 text-[#d97706] flex-shrink-0" />
-                <span>Stronger Partnerships</span>
-              </div>
-            </div>
-
-          </div>
-        </ScrollReveal>
-
       </div>
     </section>
   );
 }
+

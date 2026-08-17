@@ -50,23 +50,22 @@ export default function CTASection({ onOpenQuote }: CTASectionProps) {
                   Partner With Vartitva Health
                 </h2>
 
-                <h3 className="text-lg sm:text-xl font-bold text-amber-200">
-                  Reliable Surgical Solutions for Healthcare Professionals
+                <h3 className="text-lg sm:text-2xl font-bold text-amber-200">
+                  Let's Build Better Healthcare Together
                 </h3>
 
-                <div className="space-y-3 text-sm sm:text-base text-amber-50/90 font-normal leading-relaxed">
-                  <p>
-                    Searching for a trusted partner for orthopaedic, spine, neurology, and joint replacement implant solutions? Vartitva Health Private Limited is here to support hospitals, surgeons, and healthcare institutions with reliable products and professional assistance.
+                <div className="space-y-3 text-base sm:text-lg text-amber-50/90 font-normal leading-relaxed">
+                  <p className="text-[#fde047] font-extrabold text-base sm:text-lg">
+                    Looking for a reliable partner for surgical implant solutions?
                   </p>
-
-                  <p>
-                    Connect with us to discuss your requirements and explore healthcare solutions designed to support better surgical outcomes.
+                  <p className="text-slate-200 text-sm sm:text-base font-medium">
+                    Connect with Vartitva Health Private Limited for product enquiries and professional support.
                   </p>
                 </div>
 
                 {/* Tagline Banner */}
-                <div className="p-3.5 rounded-2xl bg-amber-500/20 backdrop-blur-md border border-amber-400/30 font-extrabold text-xs sm:text-sm tracking-wide text-amber-100 flex items-center justify-between">
-                  <span>Trusted Support. Reliable Solutions. Stronger Healthcare Partnerships.</span>
+                <div className="p-3.5 rounded-xl bg-amber-500/20 backdrop-blur-md border border-amber-400/40 font-extrabold text-xs sm:text-sm tracking-wide text-amber-200 flex items-center justify-between">
+                  <span>Trusted Support. Better Connections. Stronger Healthcare.</span>
                   <span className="font-serif italic text-amber-300 hidden sm:inline">॥ तत्परिवर्तनं भव ॥</span>
                 </div>
 
@@ -76,7 +75,7 @@ export default function CTASection({ onOpenQuote }: CTASectionProps) {
                     onClick={onOpenQuote}
                     className="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#d97706] via-[#f59e0b] to-[#d97706] text-slate-950 font-black text-xs sm:text-sm hover:shadow-xl transition-all flex items-center gap-3 transform hover:-translate-y-0.5"
                   >
-                    <span>Contact Vartitva Health Private Limited</span>
+                    <span>Partner With Us</span>
                     <ArrowRight className="w-4 h-4 text-slate-950" />
                   </button>
 
@@ -85,7 +84,7 @@ export default function CTASection({ onOpenQuote }: CTASectionProps) {
                     className="px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-white font-extrabold text-xs sm:text-sm transition-all flex items-center gap-2.5"
                   >
                     <PhoneCall className="w-4 h-4 text-amber-300" />
-                    <span>Call +91 9958813695</span>
+                    <span>Contact Us</span>
                   </a>
                 </div>
 
@@ -100,5 +99,6 @@ export default function CTASection({ onOpenQuote }: CTASectionProps) {
     </section>
   );
 }
+
 
 

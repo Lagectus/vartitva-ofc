@@ -16,11 +16,11 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function VisionMissionSection() {
   const missionBullets = [
-    "Consistent quality and reliable product support",
-    "Timely and efficient healthcare distribution",
-    "Professional assistance throughout the surgical journey",
-    "Long-term relationships built on trust and transparency",
-    "Continuous improvement through innovation and excellence",
+    "Deliver consistent and reliable implant solutions",
+    "Provide timely distribution support",
+    "Maintain professional communication",
+    "Build lasting healthcare partnerships",
+    "Encourage continuous improvement",
   ];
 
   return (
@@ -29,29 +29,6 @@ export default function VisionMissionSection() {
       <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-amber-50/60 rounded-full blur-3xl pointer-events-none" />
-
-      {/* Watermark Accents */}
-      <div className="absolute top-1/3 left-4 w-72 h-72 opacity-10 pointer-events-none z-0 hidden lg:block">
-        <Image
-          src="/images/why_choose_bg.png"
-          alt="Globe Watermark"
-          fill
-          sizes="(max-width: 1024px) 0vw, 288px"
-          loading="lazy"
-          className="object-contain"
-        />
-      </div>
-
-      <div className="absolute top-0 right-0 w-80 h-80 opacity-15 pointer-events-none z-0 hidden lg:block">
-        <Image
-          src="/images/joint_replacement_implants.png"
-          alt="Implant Watermark"
-          fill
-          sizes="(max-width: 1024px) 0vw, 320px"
-          loading="lazy"
-          className="object-contain"
-        />
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -100,17 +77,17 @@ export default function VisionMissionSection() {
                       <h3 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight group-hover:text-[#d97706] transition-colors duration-300">
                         Our Vision
                       </h3>
+                      <p className="text-xs sm:text-sm font-bold text-[#d97706] uppercase tracking-wider mt-0.5">
+                        Building a Stronger Healthcare Network
+                      </p>
                       <div className="h-0.5 w-10 group-hover:w-24 bg-[#f59e0b] mt-1 transition-all duration-500" />
                     </div>
                   </div>
 
-                  {/* Paragraphs */}
-                  <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
+                  {/* Paragraph */}
+                  <div className="space-y-4 text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
                     <p>
-                      To become a trusted healthcare distribution partner across India by delivering advanced surgical implant solutions, embracing innovation, and building meaningful partnerships with healthcare professionals.
-                    </p>
-                    <p>
-                      We aim to contribute towards improved patient care by supporting medical excellence through reliable healthcare solutions.
+                      To become a trusted healthcare distribution partner across India by connecting medical professionals with reliable surgical implant solutions and supporting continuous advancement in healthcare.
                     </p>
                   </div>
                 </div>
@@ -121,7 +98,7 @@ export default function VisionMissionSection() {
                     <Users className="w-4.5 h-4.5 text-[#d97706]" />
                   </div>
                   <span>
-                    <strong className="text-[#d97706]">Empowering</strong> Indian Healthcare Distribution
+                    <strong className="text-[#d97706]">Empowering</strong> Healthcare Networks Across India
                   </span>
                 </div>
 
@@ -155,8 +132,8 @@ export default function VisionMissionSection() {
                   </div>
 
                   {/* Lead Text */}
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-                    At Vartitva Health, our mission is to provide hospitals and surgeons with dependable orthopaedic, spine, neurology, and joint replacement implant solutions while ensuring:
+                  <p className="text-slate-700 text-base font-bold leading-relaxed">
+                    At Vartitva Health, we aim to:
                   </p>
 
                   {/* Checklist */}
@@ -176,76 +153,8 @@ export default function VisionMissionSection() {
 
         </div>
 
-        {/* BOTTOM ROW: 5 Features Horizontal Bar */}
-        <ScrollReveal variant="fade-up" delay={0.4} className="mt-14 relative z-10">
-          <div className="p-5 sm:p-6 rounded-3xl bg-white/95 backdrop-blur-xl border border-amber-200/90 hover:border-amber-400/80 shadow-xl shadow-amber-950/5 hover:shadow-2xl transition-all duration-300">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-0 lg:divide-x divide-amber-200/70">
-              
-              {/* 1. Trusted Partnerships */}
-              <div className="group/feat lg:px-4 p-2 rounded-2xl hover:bg-amber-50/60 transition-colors duration-300 flex items-center gap-3 text-left">
-                <div className="w-10 h-10 rounded-full bg-amber-50 border border-amber-200/80 group-hover/feat:border-amber-400 group-hover/feat:bg-[#d97706] group-hover/feat:text-white flex items-center justify-center text-[#d97706] flex-shrink-0 transition-all duration-300">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 group-hover/feat:text-[#d97706] transition-colors duration-300 leading-tight">
-                    Trusted Partnerships
-                  </h4>
-                </div>
-              </div>
-
-              {/* 2. Reliable Solutions */}
-              <div className="group/feat lg:px-4 p-2 rounded-2xl hover:bg-amber-50/60 transition-colors duration-300 flex items-center gap-3 text-left">
-                <div className="w-10 h-10 rounded-full bg-amber-50 border border-amber-200/80 group-hover/feat:border-amber-400 group-hover/feat:bg-[#d97706] group-hover/feat:text-white flex items-center justify-center text-[#d97706] flex-shrink-0 transition-all duration-300">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 group-hover/feat:text-[#d97706] transition-colors duration-300 leading-tight">
-                    Reliable Solutions
-                  </h4>
-                </div>
-              </div>
-
-              {/* 3. Dedicated Support */}
-              <div className="group/feat lg:px-4 p-2 rounded-2xl hover:bg-amber-50/60 transition-colors duration-300 flex items-center gap-3 text-left">
-                <div className="w-10 h-10 rounded-full bg-amber-50 border border-amber-200/80 group-hover/feat:border-amber-400 group-hover/feat:bg-[#d97706] group-hover/feat:text-white flex items-center justify-center text-[#d97706] flex-shrink-0 transition-all duration-300">
-                  <Users className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 group-hover/feat:text-[#d97706] transition-colors duration-300 leading-tight">
-                    Dedicated Support
-                  </h4>
-                </div>
-              </div>
-
-              {/* 4. Driven by Innovation */}
-              <div className="group/feat lg:px-4 p-2 rounded-2xl hover:bg-amber-50/60 transition-colors duration-300 flex items-center gap-3 text-left">
-                <div className="w-10 h-10 rounded-full bg-amber-50 border border-amber-200/80 group-hover/feat:border-amber-400 group-hover/feat:bg-[#d97706] group-hover/feat:text-white flex items-center justify-center text-[#d97706] flex-shrink-0 transition-all duration-300">
-                  <Lightbulb className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 group-hover/feat:text-[#d97706] transition-colors duration-300 leading-tight">
-                    Driven by Innovation
-                  </h4>
-                </div>
-              </div>
-
-              {/* 5. Committed to Better Outcomes */}
-              <div className="group/feat lg:px-4 p-2 rounded-2xl hover:bg-amber-50/60 transition-colors duration-300 flex items-center gap-3 text-left">
-                <div className="w-10 h-10 rounded-full bg-amber-50 border border-amber-200/80 group-hover/feat:border-amber-400 group-hover/feat:bg-[#d97706] group-hover/feat:text-white flex items-center justify-center text-[#d97706] flex-shrink-0 transition-all duration-300">
-                  <TrendingUp className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 group-hover/feat:text-[#d97706] transition-colors duration-300 leading-tight">
-                    Committed to Better Outcomes
-                  </h4>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </ScrollReveal>
-
       </div>
     </section>
   );
 }
+

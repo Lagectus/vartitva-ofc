@@ -5,11 +5,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   ShieldCheck,
-  CheckCircle2,
   Award,
-  Users,
-  Handshake,
-  HeartHandshake,
   Activity,
   Layers,
   Sparkles,
@@ -31,7 +27,7 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
       categoryUrl: "/categories/trauma-implants",
       image: "/images/orthopaedic_implants.png",
       description:
-        "We offer dependable orthopaedic implant solutions designed for trauma care, fracture management, and reconstructive procedures. Our products support surgeons with reliable performance, durability, and accuracy during complex orthopaedic surgeries.",
+        "Dependable orthopaedic implant solutions for trauma care, fracture management, and reconstructive procedures.",
     },
     {
       id: "spine",
@@ -41,7 +37,7 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
       categoryUrl: "/categories/spine-implants",
       image: "/images/spine_implants.png",
       description:
-        "Our spine implant solutions are developed to support spinal procedures requiring stability, precision, and long-term reliability. We work towards providing surgeons with effective solutions for advanced spine care.",
+        "Spine implant solutions developed to support spinal stability, alignment, and reconstructive procedures.",
     },
     {
       id: "neurology",
@@ -51,7 +47,7 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
       categoryUrl: "/categories/neurology-implants",
       image: "/images/neurology_implants.png",
       description:
-        "Vartitva Health provides specialized neurology implant solutions that support modern neurosurgical requirements. We focus on delivering reliable medical technologies that assist healthcare professionals in achieving better surgical efficiency.",
+        "Specialized neurology implant solutions designed for precision neurosurgical requirements and patient care.",
     },
     {
       id: "joint-replacement",
@@ -61,7 +57,7 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
       categoryUrl: "/categories/joint-implants",
       image: "/images/joint_replacement_implants.png",
       description:
-        "Our joint replacement implant solutions are designed to support mobility restoration and improved patient care. We provide trusted solutions that help surgeons address various joint-related procedures with confidence.",
+        "Joint replacement implant solutions engineered for mobility restoration and long-term joint health.",
     },
   ];
 
@@ -72,18 +68,6 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-amber-50/60 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Top Right Watermark Accent */}
-      <div className="absolute top-0 right-0 w-80 h-80 opacity-15 pointer-events-none z-0 hidden lg:block">
-        <Image
-          src="/images/joint_replacement_implants.png"
-          alt="Watermark"
-          fill
-          sizes="(max-width: 1024px) 0vw, 320px"
-          loading="lazy"
-          className="object-contain"
-        />
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -91,7 +75,7 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
           {/* Top Pill Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-[#b45309] text-xs font-extrabold uppercase tracking-wider border border-amber-300 shadow-xs">
             <ShieldCheck className="w-3.5 h-3.5 text-[#d97706]" />
-            <span>Implant Speciality Portfolio</span>
+            <span>Implant Portfolio</span>
           </div>
 
           {/* Main Title */}
@@ -106,14 +90,10 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
             <span className="w-1.5 h-1.5 rounded-full bg-amber-300" />
           </div>
 
-          {/* Sub-headline & Description */}
-          <h3 className="text-base sm:text-lg font-extrabold text-[#b45309] tracking-tight pt-1">
-            Advanced Implant Solutions Designed for Better Surgical Outcomes
+          {/* Sub-headline */}
+          <h3 className="text-lg sm:text-2xl font-bold text-[#b45309] tracking-tight pt-1">
+            Surgical Implant Solutions Across Key Specialties
           </h3>
-
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
-            At Vartitva Health, we provide a comprehensive range of surgical implant solutions designed to support healthcare professionals across various medical specialties. Our focus is to deliver reliable products that help surgeons perform procedures with confidence and precision.
-          </p>
         </ScrollReveal>
 
         {/* 4 Cards 2x2 Grid */}
@@ -143,35 +123,22 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
                         {/* Title */}
                         <Link
                           href={item.categoryUrl}
-                          className="text-base sm:text-lg font-black text-slate-900 group-hover:text-[#d97706] transition-colors leading-snug hover:underline"
+                          className="text-lg sm:text-xl font-black text-slate-900 group-hover:text-[#d97706] transition-colors leading-snug hover:underline block pt-1"
                         >
                           {item.title}
                         </Link>
                       </div>
-
-                      {/* Description Paragraph */}
-                      <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
-                        {item.description}
-                      </p>
                     </div>
 
                     {/* Bottom Footer Action Bar */}
-                    <div className="pt-3 border-t border-amber-100 flex items-center justify-between gap-2">
+                    <div className="pt-2 flex items-center justify-between gap-2">
                       <Link
                         href={item.categoryUrl}
-                        className="text-xs font-bold text-slate-800 hover:text-[#d97706] flex items-center gap-1.5 transition-colors"
+                        className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#d97706] via-[#f59e0b] to-[#d97706] text-slate-950 font-black text-xs shadow-xs hover:shadow-md transition-all flex items-center gap-1.5 group/btn"
                       >
-                        <ExternalLink className="w-3.5 h-3.5 text-[#d97706] flex-shrink-0" />
-                        <span>Explore Category Specs</span>
+                        <span>Explore Our Solutions</span>
+                        <ArrowRight className="w-3.5 h-3.5 text-slate-950 group-hover/btn:translate-x-1 transition-transform" />
                       </Link>
-
-                      <button
-                        onClick={() => onOpenQuote(item.title)}
-                        className="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#d97706] via-[#f59e0b] to-[#d97706] text-slate-950 font-extrabold text-xs shadow-xs hover:shadow-md transition-all flex items-center gap-1 group/btn"
-                      >
-                        <span>Inquire</span>
-                        <ArrowRight className="w-3 h-3 text-slate-950 group-hover/btn:translate-x-1 transition-transform" />
-                      </button>
                     </div>
 
                   </div>
@@ -200,81 +167,8 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
           })}
         </ScrollRevealStagger>
 
-        {/* BOTTOM ROW: 5 Features Horizontal Bar */}
-        <ScrollReveal variant="fade-up" delay={0.4} className="mt-14 relative z-10">
-          <div className="p-5 sm:p-6 rounded-3xl bg-white/95 backdrop-blur-xl border border-amber-200/90 shadow-xl shadow-amber-950/5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-0 lg:divide-x divide-amber-200/70">
-              
-              {/* 1. Advanced Technology */}
-              <div className="lg:px-4 space-y-2 text-center">
-                <div className="w-11 h-11 rounded-full bg-amber-50 border border-amber-200/80 flex items-center justify-center text-[#d97706] mx-auto">
-                  <Award className="w-5.5 h-5.5" />
-                </div>
-                <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
-                  Advanced Technology
-                </h4>
-                <p className="text-[11px] text-slate-500 leading-relaxed font-normal">
-                  Innovative solutions for modern surgical needs
-                </p>
-              </div>
-
-              {/* 2. Trusted Quality */}
-              <div className="lg:px-4 space-y-2 text-center">
-                <div className="w-11 h-11 rounded-full bg-amber-50 border border-amber-200/80 flex items-center justify-center text-[#d97706] mx-auto">
-                  <ShieldCheck className="w-5.5 h-5.5" />
-                </div>
-                <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
-                  Trusted Quality
-                </h4>
-                <p className="text-[11px] text-slate-500 leading-relaxed font-normal">
-                  Stringent quality standards for maximum reliability
-                </p>
-              </div>
-
-              {/* 3. Surgeon Focused */}
-              <div className="lg:px-4 space-y-2 text-center">
-                <div className="w-11 h-11 rounded-full bg-amber-50 border border-amber-200/80 flex items-center justify-center text-[#d97706] mx-auto">
-                  <Users className="w-5.5 h-5.5" />
-                </div>
-                <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
-                  Surgeon Focused
-                </h4>
-                <p className="text-[11px] text-slate-500 leading-relaxed font-normal">
-                  Designed to support better surgical outcomes
-                </p>
-              </div>
-
-              {/* 4. Reliable Support */}
-              <div className="lg:px-4 space-y-2 text-center">
-                <div className="w-11 h-11 rounded-full bg-amber-50 border border-amber-200/80 flex items-center justify-center text-[#d97706] mx-auto">
-                  <Handshake className="w-5.5 h-5.5" />
-                </div>
-                <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
-                  Reliable Support
-                </h4>
-                <p className="text-[11px] text-slate-500 leading-relaxed font-normal">
-                  Committed assistance at every step
-                </p>
-              </div>
-
-              {/* 5. Better Outcomes */}
-              <div className="lg:px-4 space-y-2 text-center">
-                <div className="w-11 h-11 rounded-full bg-amber-50 border border-amber-200/80 flex items-center justify-center text-[#d97706] mx-auto">
-                  <HeartHandshake className="w-5.5 h-5.5" />
-                </div>
-                <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
-                  Better Outcomes
-                </h4>
-                <p className="text-[11px] text-slate-500 leading-relaxed font-normal">
-                  Dedicated to improving patient quality of life
-                </p>
-              </div>
-
-            </div>
-          </div>
-        </ScrollReveal>
-
       </div>
     </section>
   );
 }
+

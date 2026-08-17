@@ -4,12 +4,12 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import TrustBar from "@/components/TrustBar";
 import AboutSection from "@/components/AboutSection";
 import SpecialitiesSection from "@/components/SpecialitiesSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import VisionMissionSection from "@/components/VisionMissionSection";
 import QualityCommitmentSection from "@/components/QualityCommitmentSection";
+import CoverageMapSection from "@/components/CoverageMapSection";
 import MedicalProcess from "@/components/MedicalProcess";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -37,9 +37,6 @@ export default function MainLayout() {
         {/* Section 1: Hero Section */}
         <HeroSection onOpenQuote={() => handleOpenQuote()} />
 
-        {/* Trust Bar */}
-        <TrustBar />
-
         {/* Section 2: About Vartitva Health */}
         <AboutSection />
 
@@ -55,12 +52,16 @@ export default function MainLayout() {
         {/* Section 6: Our Commitment to Quality */}
         <QualityCommitmentSection />
 
-        {/* Section 7: Our Process */}
+        {/* Section 7: Areas We Serve */}
+        <CoverageMapSection />
+
+        {/* Section 8: Our Process */}
         <MedicalProcess />
 
         {/* Section 9: Partner With Vartitva Health */}
         <CTASection onOpenQuote={() => handleOpenQuote()} />
       </main>
+
 
       {/* Footer */}
       <Footer onOpenQuote={() => handleOpenQuote()} />

@@ -59,10 +59,10 @@ export default function CategoryPage({ params }: PageProps) {
       {/* Sticky Glass Navbar */}
       <Navbar onOpenQuote={() => handleOpenInquiry()} />
 
-      <main className="pt-28 pb-20">
+      <main>
         
         {/* Category Hero Header */}
-        <section className="relative py-16 lg:py-20 bg-slate-950 text-white overflow-hidden">
+        <section className="relative pt-32 pb-16 lg:pt-36 lg:pb-20 bg-slate-950 text-white overflow-hidden">
           {/* Background Image Vignette */}
           <div className="absolute inset-0 z-0 opacity-25 pointer-events-none">
             <Image

@@ -83,7 +83,7 @@ export default function Footer({ onOpenQuote }: FooterProps) {
               </h4>
               <ul className="space-y-2.5 text-xs text-slate-400 font-medium">
                 <li>
-                  <Link href="/#about" className="hover:text-amber-300 transition-colors">About Vartitva</Link>
+                  <Link href="/about" className="hover:text-amber-300 transition-colors">About Vartitva</Link>
                 </li>
                 <li>
                   <Link href="/#why-choose-us" className="hover:text-amber-300 transition-colors">Why Choose Us</Link>

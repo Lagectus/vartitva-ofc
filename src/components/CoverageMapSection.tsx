@@ -8,21 +8,18 @@ export default function CoverageMapSection() {
   const regions = [
     {
       name: "Delhi",
-      text: "Serving hospitals and healthcare professionals in Delhi with dependable orthopaedic, spine, neurology, and joint replacement implant solutions supported by responsive service.",
-      color: "text-[#0f4c81]",
-      badge: "Capital Zone",
+      text: "Orthopaedic, spine, neurology, and joint replacement implant solutions.",
+      badge: "Capital Territory",
     },
     {
       name: "Gurugram",
-      text: "Supporting healthcare institutions in Gurugram with reliable implant distribution solutions designed to meet the requirements of modern surgical practices.",
-      color: "text-[#e11d48]",
-      badge: "NCR Medical Hub",
+      text: "Reliable surgical implant distribution for healthcare institutions.",
+      badge: "NCR Healthcare Hub",
     },
     {
       name: "Sonipat",
-      text: "Providing trusted healthcare support in Sonipat through efficient distribution services and quality-focused surgical implant solutions.",
-      color: "text-[#0f4c81]",
-      badge: "Express Distribution",
+      text: "Efficient healthcare support for hospitals and medical professionals.",
+      badge: "Regional Network",
     },
   ];
 
@@ -59,12 +56,8 @@ export default function CoverageMapSection() {
           </h2>
 
           <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200 bg-clip-text text-transparent">
-            Expanding Healthcare Support Across Regions
+            Growing Across Healthcare Networks
           </h3>
-
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-            Vartitva Health Private Limited is committed to providing reliable surgical implant distribution services to hospitals, healthcare institutions, and medical professionals across key locations. With a strong focus on timely support and efficient service, we continue to strengthen our presence in the healthcare sector.
-          </p>
         </ScrollReveal>
 
         {/* 3 Regional Cards */}
@@ -88,7 +81,7 @@ export default function CoverageMapSection() {
                     </span>
                   </div>
 
-                  <p className="text-sm text-slate-300 leading-relaxed font-normal">
+                  <p className="text-base text-slate-200 leading-relaxed font-medium">
                     {region.text}
                   </p>
                 </div>
@@ -103,12 +96,12 @@ export default function CoverageMapSection() {
 
         {/* Outro Paragraph Banner */}
         <ScrollReveal variant="zoom-in" delay={0.2}>
-          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-amber-950/60 via-slate-900/90 to-amber-950/60 border border-amber-500/30 backdrop-blur-md text-center max-w-4xl mx-auto space-y-2 shadow-2xl">
+          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-amber-950/60 via-slate-900/90 to-amber-950/60 border border-amber-500/30 backdrop-blur-md text-center max-w-3xl mx-auto space-y-2 shadow-2xl">
             <div className="inline-flex items-center gap-2 text-amber-300 text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-4 h-4 text-[#f59e0b]" /> Pan-India Healthcare Reach
+              <Sparkles className="w-4 h-4 text-[#f59e0b]" /> Pan-India Reach
             </div>
-            <p className="text-base sm:text-lg font-medium text-white leading-relaxed">
-              With a vision to expand our network across India, Vartitva Health continues to build strong partnerships and deliver dependable healthcare solutions wherever they are needed.
+            <p className="text-xl sm:text-2xl font-black text-amber-200 tracking-wide">
+              Expanding Across India
             </p>
           </div>
         </ScrollReveal>
@@ -117,5 +110,6 @@ export default function CoverageMapSection() {
     </section>
   );
 }
+
 
 
