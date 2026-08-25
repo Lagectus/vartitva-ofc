@@ -2,7 +2,6 @@
 
 import { ArrowRight, Activity, Award, Sparkles, PhoneCall, ShieldCheck, MapPin } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import { LotusIcon } from "./LotusIcon";
 
 interface HeroSectionProps {
   onOpenQuote: () => void;
@@ -41,32 +40,18 @@ export default function HeroSection({ onOpenQuote }: HeroSectionProps) {
       {/* Hero Main Content Container */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center space-y-8 my-auto">
 
-        {/* Top Sub-header Status Pill */}
-        <ScrollReveal variant="fade-down" delay={0.1}>
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-amber-500/20 via-amber-400/25 to-amber-500/20 border-2 border-amber-400/50 backdrop-blur-md shadow-xl shadow-amber-500/10">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-[#d97706] to-[#f59e0b] text-slate-950 flex items-center justify-center flex-shrink-0 shadow-md">
-              <LotusIcon className="w-4 h-4 text-slate-950" />
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xs sm:text-sm font-black text-amber-200 uppercase tracking-widest">
-                Tat Parivartan
-              </span>
-              <span className="text-xs font-serif italic text-amber-300/80 hidden sm:inline">
-                ॥ तत्परिवर्तनं भव ॥
-              </span>
-            </div>
-          </div>
-        </ScrollReveal>
-
         {/* Main Headline */}
-        <ScrollReveal variant="fade-up" delay={0.25}>
-          <div className="space-y-4 max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.12]">
-              Shaping the <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent">Future of Healthcare</span>, One Surgical Solution at a Time
+        <ScrollReveal variant="fade-up" delay={0.15}>
+          <div className="space-y-5 max-w-4xl mx-auto">
+            <p className="text-2xl sm:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent tracking-tight leading-tight" style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}>
+              ॥ तत् परिवर्तन भव ॥
+            </p>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] uppercase">
+              Shaping the <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent">Future of Healthcare</span>
             </h1>
 
             <h2 className="text-base sm:text-xl font-semibold text-amber-300/90 tracking-wider uppercase max-w-3xl mx-auto">
-              Orthopaedic <span className="text-amber-400">|</span> Spine <span className="text-amber-400">|</span> Neurology <span className="text-amber-400">|</span> Joint Replacement
+              Trauma Implants <span className="text-amber-400">|</span> Joint Replacement <span className="text-amber-400">|</span> Spine Implants <span className="text-amber-400">|</span> Arthroscopy Implants
             </h2>
           </div>
         </ScrollReveal>

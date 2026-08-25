@@ -10,7 +10,7 @@ interface CTASectionProps {
 
 export default function CTASection({ onOpenQuote }: CTASectionProps) {
   return (
-    <section id="partner" className="py-20 bg-white relative overflow-hidden">
+    <section id="partner" className="py-14 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Split Image & CTA Card Container */}
@@ -22,12 +22,12 @@ export default function CTASection({ onOpenQuote }: CTASectionProps) {
               {/* LEFT: Partnership Image Frame */}
               <div className="lg:col-span-5 relative h-72 lg:h-full min-h-[320px] overflow-hidden">
                 <Image
-                  src="/images/partner_healthcare_handshake.png"
+                  src="/images/partner_indian_v2.jpg"
                   alt="Partner With Vartitva Health"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
                   loading="lazy"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-100"
+                  className="object-cover object-[40%_top] transition-transform duration-700 opacity-100"
                 />
                 
                 <div className="absolute top-4 left-4 z-10">
@@ -66,7 +66,6 @@ export default function CTASection({ onOpenQuote }: CTASectionProps) {
                 {/* Tagline Banner */}
                 <div className="p-3.5 rounded-xl bg-amber-500/20 backdrop-blur-md border border-amber-400/40 font-extrabold text-xs sm:text-sm tracking-wide text-amber-200 flex items-center justify-between">
                   <span>Trusted Support. Better Connections. Stronger Healthcare.</span>
-                  <span className="font-serif italic text-amber-300 hidden sm:inline">॥ तत्परिवर्तनं भव ॥</span>
                 </div>
 
                 {/* Action Buttons */}

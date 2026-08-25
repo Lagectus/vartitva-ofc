@@ -8,7 +8,7 @@ export default function TrustBar() {
     {
       icon: MapPin,
       title: "Serving Key Hubs",
-      subtitle: "Delhi • Gurugram • Sonipat",
+      subtitle: "Delhi • Gurugram • Sonipat • Panipat • Faridabad",
       color: "text-[#d97706]",
       bgColor: "bg-amber-50/90",
       borderColor: "border-amber-200/80",

@@ -29,7 +29,7 @@ export default function QualityCommitmentSection() {
   ];
 
   return (
-    <section id="quality" className="py-20 bg-white relative overflow-hidden">
+    <section id="quality" className="py-14 bg-white relative overflow-hidden">
       {/* Background Soft Blobs */}
       <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-amber-100/50 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-amber-50/70 rounded-full blur-3xl pointer-events-none" />

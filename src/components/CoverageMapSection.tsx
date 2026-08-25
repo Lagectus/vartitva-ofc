@@ -8,7 +8,7 @@ export default function CoverageMapSection() {
   const regions = [
     {
       name: "Delhi",
-      text: "Orthopaedic, spine, neurology, and joint replacement implant solutions.",
+      text: "Trauma, joint replacement, spine, and arthroscopy implant solutions.",
       badge: "Capital Territory",
     },
     {
@@ -21,10 +21,20 @@ export default function CoverageMapSection() {
       text: "Efficient healthcare support for hospitals and medical professionals.",
       badge: "Regional Network",
     },
+    {
+      name: "Panipat",
+      text: "Expanded surgical implant distribution and dedicated support.",
+      badge: "Emerging Hub",
+    },
+    {
+      name: "Faridabad",
+      text: "Comprehensive orthopaedic and spine implant supply network.",
+      badge: "Strategic Reach",
+    },
   ];
 
   return (
-    <section id="coverage" className="py-24 bg-slate-950 text-white relative overflow-hidden">
+    <section id="coverage" className="py-14 bg-slate-950 text-white relative overflow-hidden">
       {/* Background City Dusk Image Texture */}
       <div className="absolute inset-0 z-0 opacity-25 pointer-events-none">
         <Image
@@ -60,34 +70,36 @@ export default function CoverageMapSection() {
           </h3>
         </ScrollReveal>
 
-        {/* 3 Regional Cards */}
-        <ScrollRevealStagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* 5 Regional Cards */}
+        <ScrollRevealStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
           {regions.map((region, idx) => (
             <ScrollRevealItem key={idx} variant="fade-up">
-              <div className="p-8 rounded-3xl bg-slate-900/80 hover:bg-slate-900/95 border border-white/15 hover:border-amber-400/50 backdrop-blur-xl transition-all duration-300 space-y-4 flex flex-col justify-between group shadow-2xl h-full">
+              <div className="p-5 sm:p-6 rounded-3xl bg-slate-900/80 hover:bg-slate-900/95 border border-white/15 hover:border-amber-400/50 backdrop-blur-xl transition-all duration-300 space-y-4 flex flex-col justify-between group shadow-xl h-full">
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col gap-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
-                        <MapPin className="w-6 h-6" />
+                      <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                        <MapPin className="w-5 h-5" />
                       </div>
-                      <h4 className="text-2xl font-extrabold text-white">
+                      <h4 className="text-xl font-extrabold text-white">
                         {region.name}
                       </h4>
                     </div>
 
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                      {region.badge}
-                    </span>
+                    <div className="inline-block">
+                      <span className="text-[9px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                        {region.badge}
+                      </span>
+                    </div>
                   </div>
 
-                  <p className="text-base text-slate-200 leading-relaxed font-medium">
+                  <p className="text-sm text-slate-200 leading-relaxed font-medium">
                     {region.text}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/10 text-xs font-semibold text-amber-300 flex items-center gap-2">
-                  <Building2 className="w-4 h-4 text-amber-400" /> Dependable Healthcare Support
+                <div className="pt-3 border-t border-white/10 text-[11px] font-semibold text-amber-300 flex items-center gap-1.5">
+                  <Building2 className="w-3.5 h-3.5 text-amber-400" /> Dependable Support
                 </div>
               </div>
             </ScrollRevealItem>

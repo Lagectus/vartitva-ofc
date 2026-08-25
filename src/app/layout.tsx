@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://vartitvahealth.com"),
   title: "Vartitva Health Pvt. Ltd. | Precision Surgical Implant Solutions",
   description:
-    "India's premier distributor of world-class Orthopaedic Implants, Neurology Implants, Spine Implants, and Joint Replacement Solutions serving Delhi, Gurugram, and Sonipat.",
+    "India's premier distributor of world-class Trauma Implants, Joint Replacement, Spine Implants, and Arthroscopy Implant Solutions serving Delhi, Gurugram, Sonipat, Panipat, and Faridabad.",
   keywords: [
     "Vartitva Health",
-    "Orthopaedic Implants Delhi",
-    "Neurology Implants Gurugram",
+    "Trauma Implants Delhi",
+    "Joint Replacement Gurugram",
     "Spine Implants Sonipat",
-    "Joint Replacement Implants NCR",
+    "Arthroscopy Implants NCR",
     "Surgical Implants Distributor",
     "Healthcare Distribution India",
   ],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vartitva Health Pvt. Ltd. | Surgical Implant Distribution",
     description:
-      "Advancing Healthcare with Precision & Innovation. Trusted distributor of Orthopaedic, Spine, Neurology & Joint Implants.",
+      "Advancing Healthcare with Precision & Innovation. Trusted distributor of Trauma, Joint Replacement, Spine & Arthroscopy Implants.",
     url: "https://vartitvahealth.com",
     siteName: "Vartitva Health",
     locale: "en_IN",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vartitva Health Pvt. Ltd. | Precision Surgical Implants",
     description:
-      "Trusted distributor of Orthopaedic, Spine, Neurology & Joint Implants serving North India.",
+      "Trusted distributor of Trauma, Joint Replacement, Spine & Arthroscopy Implants serving North India.",
   },
   icons: {
     icon: [
@@ -79,19 +79,19 @@ const jsonLdSchema = {
   url: "https://vartitvahealth.com",
   logo: "https://vartitvahealth.com/images/logo.avif",
   description:
-    "India's premier distributor of world-class Orthopaedic Implants, Neurology Implants, Spine Implants, and Joint Replacement Solutions.",
+    "India's premier distributor of world-class Trauma Implants, Joint Replacement, Spine Implants, and Arthroscopy Implant Solutions.",
   telephone: "+91-9958813695",
   address: {
     "@type": "PostalAddress",
     addressRegion: "Delhi NCR",
     addressCountry: "IN",
   },
-  areaServed: ["Delhi", "Gurugram", "Sonipat", "North India"],
+  areaServed: ["Delhi", "Gurugram", "Sonipat", "Panipat", "Faridabad", "North India"],
   medicalSpecialty: [
-    "Orthopedics",
-    "Neurosurgery",
-    "Spine Surgery",
+    "Trauma Surgery",
     "Joint Replacement",
+    "Spine Surgery",
+    "Arthroscopy",
   ],
 };
 
@@ -109,6 +109,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/images/logo.avif" type="image/avif" />
         <link rel="apple-touch-icon" href="/images/logo.avif" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700;800;900&display=swap" rel="stylesheet" />
         <Script
           id="json-ld-schema"
           type="application/ld+json"

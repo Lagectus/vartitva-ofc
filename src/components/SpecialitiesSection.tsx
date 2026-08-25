@@ -23,7 +23,7 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
       id: "orthopaedic",
       number: "01",
       icon: Activity,
-      title: "Orthopaedic Implants",
+      title: "Trauma Implants",
       categoryUrl: "/categories/trauma-implants",
       image: "/images/orthopaedic_implants.png",
       description:
@@ -40,14 +40,14 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
         "Spine implant solutions developed to support spinal stability, alignment, and reconstructive procedures.",
     },
     {
-      id: "neurology",
+      id: "arthroscopy",
       number: "03",
       icon: Sparkles,
-      title: "Neurology Implants",
-      categoryUrl: "/categories/neurology-implants",
-      image: "/images/neurology_implants.png",
+      title: "Arthroscopy Implants",
+      categoryUrl: "/categories/arthroscopy-implants",
+      image: "/images/arthroscopy_implants.png",
       description:
-        "Specialized neurology implant solutions designed for precision neurosurgical requirements and patient care.",
+        "Advanced arthroscopy implant solutions for minimally invasive joint repair and reconstructive procedures.",
     },
     {
       id: "joint-replacement",
@@ -62,7 +62,7 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
   ];
 
   return (
-    <section id="specialities" className="py-24 bg-white relative overflow-hidden text-slate-900">
+    <section id="specialities" className="py-14 bg-white relative overflow-hidden text-slate-900">
       {/* Background Dots Grid & Soft Glows */}
       <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl pointer-events-none" />

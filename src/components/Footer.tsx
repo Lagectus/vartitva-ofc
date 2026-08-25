@@ -53,7 +53,7 @@ export default function Footer({ onOpenQuote }: FooterProps) {
               </Link>
 
               <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
-                Dedicated to strengthening healthcare by delivering advanced orthopaedic, spine, neurology, and joint replacement implant solutions across Delhi, Gurugram, Sonipat, and India.
+                Dedicated to strengthening healthcare by delivering advanced trauma, joint replacement, spine, and arthroscopy implant solutions across Delhi, Gurugram, Sonipat, Panipat, Faridabad, and India.
               </p>
 
               <div className="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/20 space-y-2.5 text-xs">
@@ -71,7 +71,7 @@ export default function Footer({ onOpenQuote }: FooterProps) {
                 </div>
                 <div className="flex items-center gap-2.5 text-slate-300">
                   <MapPin className="w-4 h-4 text-[#f59e0b]" />
-                  <span>Delhi • Gurugram • Sonipat</span>
+                  <span>Delhi • Gurugram • Sonipat • Panipat • Faridabad</span>
                 </div>
               </div>
             </div>
@@ -111,7 +111,12 @@ export default function Footer({ onOpenQuote }: FooterProps) {
               <ul className="space-y-2.5 text-xs text-slate-400 font-medium">
                 <li>
                   <Link href="/categories/trauma-implants" className="hover:text-amber-300 transition-colors">
-                    Orthopaedic Implants
+                    Trauma Implants
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/categories/joint-implants" className="hover:text-amber-300 transition-colors">
+                    Joint Replacement
                   </Link>
                 </li>
                 <li>
@@ -120,13 +125,8 @@ export default function Footer({ onOpenQuote }: FooterProps) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/categories/neurology-implants" className="hover:text-amber-300 transition-colors">
-                    Neurology Implants
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/categories/joint-implants" className="hover:text-amber-300 transition-colors">
-                    Joint Replacement Implants
+                  <Link href="/categories/arthroscopy-implants" className="hover:text-amber-300 transition-colors">
+                    Arthroscopy Implants
                   </Link>
                 </li>
               </ul>

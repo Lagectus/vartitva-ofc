@@ -17,7 +17,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-white relative overflow-hidden">
+    <section id="about" className="py-14 bg-white relative overflow-hidden">
       {/* Subtle Background Lighting Accent */}
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-amber-100/50 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-amber-50/60 rounded-full blur-3xl pointer-events-none" />
@@ -88,12 +88,12 @@ export default function AboutSection() {
 
                 {/* Paragraph 1 */}
                 <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
-                  At Vartitva Health, we provide orthopaedic, spine, neurology, and joint replacement implant solutions for hospitals, surgeons, and healthcare institutions. We focus on dependable distribution, responsive service, and long-term professional partnerships.
+                  At Vartitva Health, we provide trauma, joint replacement, spine, and arthroscopy implant solutions for hospitals, surgeons, and healthcare institutions. We focus on dependable distribution, responsive service, and long-term professional partnerships.
                 </p>
 
                 {/* Paragraph 2 */}
                 <p className="text-slate-800 text-base sm:text-lg leading-relaxed font-bold border-l-4 border-l-[#f59e0b] pl-4">
-                  Serving Delhi, Gurugram, and Sonipat, we are committed to expanding our healthcare network across India.
+                  Serving Delhi, Gurugram, Sonipat, Panipat & Faridabad, we are committed to expanding our healthcare network across India.
                 </p>
 
               </div>

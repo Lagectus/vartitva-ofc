@@ -24,7 +24,7 @@ export default function VisionMissionSection() {
   ];
 
   return (
-    <section id="vision-mission" className="py-24 bg-white relative overflow-hidden text-slate-900">
+    <section id="vision-mission" className="py-14 bg-white relative overflow-hidden text-slate-900">
       {/* Background Dots Grid & Soft Glows */}
       <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl pointer-events-none" />

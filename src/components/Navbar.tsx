@@ -91,7 +91,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
                     href="/categories/trauma-implants"
                     className="p-2.5 rounded-xl hover:bg-amber-50 flex items-center justify-between text-xs font-bold text-slate-800 hover:text-[#d97706] transition-colors"
                   >
-                    <span>Trauma & Orthopaedic</span>
+                    <span>Trauma Implants</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
                   </Link>
                   <Link
@@ -109,10 +109,10 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
                     <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
                   </Link>
                   <Link
-                    href="/categories/neurology-implants"
+                    href="/categories/arthroscopy-implants"
                     className="p-2.5 rounded-xl hover:bg-amber-50 flex items-center justify-between text-xs font-bold text-slate-800 hover:text-[#d97706] transition-colors"
                   >
-                    <span>Neurology Implants</span>
+                    <span>Arthroscopy Implants</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
                   </Link>
                 </div>
@@ -136,7 +136,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
           {/* Regional Pill & CTAs */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="tel:9958813695"
+              href="tel:+919958813695"
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-extrabold text-xs transition-all border ${
                 scrolled
                   ? "bg-amber-50 text-[#d97706] border-amber-300 hover:bg-amber-100"
@@ -144,7 +144,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               }`}
             >
               <Phone className="w-4 h-4 text-[#d97706]" />
-              <span>9958813695</span>
+              <span>+91 9958813695</span>
             </a>
 
             <button
@@ -231,7 +231,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
           <div className="pt-4 space-y-3">
             <div className="flex items-center gap-2 text-xs font-semibold text-amber-900 bg-amber-50 p-3 rounded-xl border border-amber-200">
               <MapPin className="w-4 h-4 text-[#d97706]" />
-              <span>Delhi • Gurugram • Sonipat</span>
+              <span>Delhi • Gurugram • Sonipat • Panipat • Faridabad</span>
             </div>
 
             <button
@@ -245,10 +245,11 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             </button>
 
             <a
-              href="tel:9958813695"
+              href="tel:+919958813695"
               className="w-full py-3 rounded-xl bg-amber-50 text-slate-900 font-bold text-sm text-center flex items-center justify-center gap-2 border border-amber-200"
             >
-              <Phone className="w-4 h-4 text-[#d97706]" /> Call +91 9958813695
+              <Phone className="w-4 h-4 text-[#d97706]" />
+              Call +91 9958813695
             </a>
           </div>
         </div>
