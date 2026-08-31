@@ -8,7 +8,6 @@ export interface ImplantSystem {
 
 export interface CategoryData {
   slug: string;
-  slugAlt?: string;
   title: string;
   subtitle: string;
   tagline: string;
@@ -24,27 +23,28 @@ export interface CategoryData {
 export const CATEGORIES_DATA: Record<string, CategoryData> = {
   "trauma-implants": {
     slug: "trauma-implants",
-    title: "Orthopaedic & Trauma Implants",
-    subtitle: "Advanced Fixation & Trauma Care Systems for Complex Fractures",
-    tagline: "Trauma Care & Reconstructive Precision",
-    badge: "Orthopaedic & Trauma Portfolio",
+    title: "Trauma Implants",
+    subtitle: "Dependable Orthopaedic Trauma & Fracture Care Solutions",
+    tagline: "Precision Fracture Management & Bone Healing",
+    badge: "Orthopaedic Trauma Portfolio",
     image: "/images/orthopaedic_implants.png",
     description:
-      "Comprehensive range of high-precision orthopaedic trauma implants engineered for anatomical congruence, rigid internal fixation, and accelerated bone healing across trauma care procedures.",
+      "Trauma solutions are designed to support the treatment of fractures, bone injuries, and other orthopedic trauma conditions. They provide practical options for different procedures and help healthcare professionals manage injury-related cases with dependable products.",
     overviewParagraphs: [
-      "At Vartitva Health, our Orthopaedic & Trauma Implant portfolio is designed to assist trauma surgeons in managing complex fractures, non-unions, and reconstructive bone procedures with unwavering precision.",
-      "Manufactured from medical-grade Titanium Alloy (Ti-6Al-4V ELI) and Stainless Steel (316L), our locking plate systems, intramedullary nails, and cannulated screws adhere to stringent ISO 13485 quality standards and CE/CDSCO regulatory guidelines.",
-      "We provide healthcare institutions across Delhi, Gurugram, Sonipat, and Pan-India with complete surgical instrument sets, rapid delivery for emergency procedures, and dedicated technical support.",
+      "Trauma solutions are designed to support the treatment of fractures, bone injuries, and other orthopedic trauma conditions. They provide practical options for different procedures and help healthcare professionals manage injury-related cases with dependable products.",
+      "At Vartitva Health, our trauma portfolio provides healthcare professionals with locking plate systems, intramedullary nails, cannulated screws, and external fixation technologies engineered for anatomical congruence and rigid internal fixation.",
+      "Manufactured from certified medical-grade Titanium Alloy (Ti-6Al-4V ELI) and Stainless Steel (316L), every trauma solution adheres to rigorous ISO 13485 standards, CDSCO, and international compliance benchmarks.",
+      "We support hospitals and surgical centers across Delhi, Gurugram, Sonipat, Panipat, Faridabad, and Pan-India with emergency OR delivery and complete surgical instrumentation.",
     ],
     keySpecs: [
       { label: "Material Grade", value: "Ti-6Al-4V ELI / 316L Stainless Steel" },
-      { label: "Quality Compliance", value: "ISO 13485 & CE/CDSCO Certified" },
+      { label: "Quality Compliance", value: "ISO 13485 & CDSCO Certified" },
       { label: "Sterilization Standard", value: "Pre-sterilized & Non-sterile Tray Options" },
       { label: "Delivery Support", value: "Emergency OR Supply in Delhi NCR & Pan-India" },
     ],
     implantSystems: [
       {
-        name: "Anatomic Locking Plate Systems",
+        name: "Anatomic Locking Compression Plate Systems",
         indication: "Complex Periarticular & Diaphyseal Fractures",
         material: "Titanium Alloy (Ti-6Al-4V)",
         features: [
@@ -55,9 +55,9 @@ export const CATEGORIES_DATA: Record<string, CategoryData> = {
         specs: "3.5mm / 4.5mm / 5.0mm System Options",
       },
       {
-        name: "Intramedullary Nailing Systems",
+        name: "Intramedullary Interlocking Nailing Systems",
         indication: "Femoral, Tibial & Humeral Shaft Fractures",
-        material: "Titanium Alloy",
+        material: "Titanium Alloy (Ti-6Al-4V)",
         features: [
           "Anatomical bend radius matching natural canal curvature",
           "Multi-planar locking options for enhanced rotational stability",
@@ -66,24 +66,24 @@ export const CATEGORIES_DATA: Record<string, CategoryData> = {
         specs: "Diameter: 8mm to 13mm | Lengths: 240mm to 440mm",
       },
       {
-        name: "Cannulated & Solid Screw Systems",
+        name: "Cannulated & Solid Cortical/Cancellous Screws",
         indication: "Femoral Neck, Scaphoid & Small Bone Fixation",
         material: "Ti-6Al-4V / 316L SS",
         features: [
           "Self-drilling and self-tapping thread profiles",
-          "Reverse-cutting flutes facilitating easy removal if required",
+          "Reverse-cutting flutes facilitating clean insertion and removal",
           "Guide wire guided precision insertion for intraoperative accuracy",
         ],
         specs: "2.7mm, 3.5mm, 4.0mm, 4.5mm & 6.5mm Cannulated Screws",
       },
       {
         name: "External Fixation & Pin Systems",
-        indication: "Open Fractures, Damage Control & Polytrauma",
+        indication: "Open Fractures, Polytrauma & Damage Control Orthopaedics",
         material: "Carbon Fiber & Titanium Rods",
         features: [
-          "Lightweight modular clamps for rapid assembly",
+          "Lightweight modular clamps for rapid emergency assembly",
           "Self-drilling Schanz pins with hydroxyapatite coating options",
-          "Radiolucent carbon fiber connecting rods",
+          "Radiolucent carbon fiber connecting rods for clear X-ray imaging",
         ],
         specs: "Pin Diameters: 4.0mm to 5.0mm | Modular Clamps",
       },
@@ -95,7 +95,7 @@ export const CATEGORIES_DATA: Record<string, CategoryData> = {
       },
       {
         title: "Full Batch Traceability",
-        desc: "Every implant carries laser-etched lot numbers for complete regulatory compliance and patient safety logs.",
+        desc: "Every trauma implant carries laser-etched lot numbers for complete regulatory compliance and hospital records.",
       },
       {
         title: "Sterile & Tray Logistics",
@@ -106,56 +106,56 @@ export const CATEGORIES_DATA: Record<string, CategoryData> = {
 
   "joint-implants": {
     slug: "joint-implants",
-    title: "Joint Replacement Implants",
-    slugAlt: "joint-replacement-implants",
-    subtitle: "Primary & Revision Total Knee and Hip Replacement Solutions",
+    title: "Joints Implants",
+    subtitle: "Joint Restoration Solutions for Hip, Knee & Major Articulations",
     tagline: "Mobility Restoration & Joint Longevity",
-    badge: "Joint Replacement Portfolio",
+    badge: "Joints Implant Portfolio",
     image: "/images/joint_replacement_implants.png",
     description:
-      "State-of-the-art total knee and hip replacement systems crafted with advanced tribology, highly cross-linked polyethylene, and porous coating for optimal implant longevity and joint function.",
+      "Our Joint solutions focus on supporting the treatment of joint-related conditions and restoring comfortable movement. They are developed for procedures involving commonly treated joints while maintaining focus on quality and dependable clinical use.",
     overviewParagraphs: [
-      "Vartitva Health supplies high-performance joint replacement implant systems designed to help joint replacement surgeons restore joint kinematics and mobility in patients suffering from severe osteoarthritis and joint trauma.",
-      "Our portfolio includes primary and revision total knee systems, modular hip stems, ceramic and metallic heads, and highly cross-linked polyethylene (HXLPE) liners engineered for ultra-low wear rates and long-term survivorship.",
-      "Supported by dedicated surgical instrument sets and trial implants, our joint distribution network ensures timely supply and sterile packaging for hospitals across Delhi, Gurugram, Sonipat, and all major medical centers.",
+      "Our Joint solutions focus on supporting the treatment of joint-related conditions and restoring comfortable movement. They are developed for procedures involving commonly treated joints while maintaining focus on quality and dependable clinical use.",
+      "Vartitva Health supplies high-performance joint solutions designed to help orthopedic surgeons restore joint kinematics, relieve pain, and enhance mobility in patients suffering from severe osteoarthritis, rheumatoid degeneration, and trauma-induced joint disorders.",
+      "Our portfolio encompasses primary and revision total knee systems, modular hip stems, ceramic/metallic articulating heads, and highly cross-linked polyethylene (HXLPE) liners engineered for ultra-low wear rates and long-term joint stability.",
+      "Backed by complete surgical trial kits and prompt delivery logistics, we ensure seamless operational readiness for hospitals and orthopedic institutions.",
     ],
     keySpecs: [
-      { label: "Femoral Component", value: "CoCr Alloy / Oxinium Surface Options" },
+      { label: "Femoral Component", value: "CoCr Alloy / Premium Surface Options" },
       { label: "Tibial / Acetabular Liner", value: "Highly Cross-linked Polyethylene (HXLPE)" },
-      { label: "Fixation Options", value: "Celled Porous Coated Cementless & Cemented Stems" },
+      { label: "Fixation Options", value: "Cementless Porous Coated & Cemented Stems" },
       { label: "Surgeons Support", value: "Complete Precision Instrument & Trial Kits" },
     ],
     implantSystems: [
       {
-        name: "Primary Total Knee Replacement (TKR)",
-        indication: "End-Stage Osteoarthritis & Rheumatoid Knee Joint Degradation",
+        name: "Primary Total Knee Replacement (TKR) Systems",
+        indication: "End-Stage Knee Osteoarthritis & Rheumatoid Joint Degradation",
         material: "CoCr Alloy Femoral Component + HXLPE Tibial Insert",
         features: [
           "Anatomical femoral geometry for natural patellar tracking",
-          "Posterior Stabilized (PS) and Cruciate Retaining (CR) options",
-          "Proportional sizing options ensuring accurate ligament balancing",
+          "Posterior Stabilized (PS) and Cruciate Retaining (CR) configurations",
+          "Proportional sizing options ensuring accurate soft tissue and ligament balancing",
         ],
         specs: "Sizes 1 to 6 | PS & CR Insert Thicknesses 9mm-17mm",
       },
       {
-        name: "Total Hip Arthroplasty (THA) System",
-        indication: "Hip Osteoarthritis, Avascular Necrosis & Neck Fractures",
+        name: "Total Hip Arthroplasty (THA) Systems",
+        indication: "Hip Osteoarthritis, Avascular Necrosis & Femoral Neck Fractures",
         material: "Ti-6Al-4V Stem + Biolox Ceramic / CoCr Head + HXLPE Cup",
         features: [
-          "Triple-tapered cementless femoral stem promoting osseointegration",
+          "Triple-tapered cementless femoral stem promoting rapid osseointegration",
           "Porous plasma-sprayed titanium acetabular shell coating",
-          "Biolox Delta ceramic head options for near-zero wear rate",
+          "Ceramic and CoCr head options for ultra-low friction wear",
         ],
         specs: "Stem Sizes 0 to 10 | Head Diameters: 28mm, 32mm, 36mm",
       },
       {
-        name: "Revision Knee & Hip Implant Systems",
-        indication: "Implant Revision, Severe Bone Loss & Structural Defect Reconstructions",
+        name: "Revision Knee & Hip Reconstruction Systems",
+        indication: "Joint Revision, Severe Bone Loss & Structural Defect Reconstructions",
         material: "Ti-6Al-4V Stems & Modular Augments",
         features: [
-          "Modular tibial and femoral stems for axial load stabilization",
-          "Step and wedge titanium augments addressing bone loss defects",
-          "Hinge knee options for complex ligamentous instability",
+          "Modular tibial and femoral stem extensions for axial load stabilization",
+          "Step and wedge titanium augments addressing severe bone loss defects",
+          "Constrained and hinged options for complex ligamentous instability",
         ],
         specs: "Modular Stem Lengths: 75mm to 150mm | Offset Options",
       },
@@ -163,14 +163,14 @@ export const CATEGORIES_DATA: Record<string, CategoryData> = {
     qualityHighlights: [
       {
         title: "Ultra-Low Wear Tribology",
-        desc: "Advanced HXLPE liners infused with Vitamin-E options to minimize osteolysis risk and extend joint life.",
+        desc: "Advanced HXLPE articulating surfaces minimize osteolysis risk and support long-term implant longevity.",
       },
       {
-        title: "Porous Titanium Coating",
-        desc: "Plasma-sprayed porous coatings optimize initial press-fit stability and long-term biological fixation.",
+        title: "Porous Biological Fixation",
+        desc: "Plasma-sprayed porous coatings optimize initial press-fit stability and natural bone ingrowth.",
       },
       {
-        title: "Full OR Support",
+        title: "Complete Surgical Support",
         desc: "Delivered with precision trial components and ergonomic instrument containers for rapid surgical workflow.",
       },
     ],
@@ -178,32 +178,33 @@ export const CATEGORIES_DATA: Record<string, CategoryData> = {
 
   "spine-implants": {
     slug: "spine-implants",
-    title: "Spine Implants & Spinal Systems",
+    title: "Spine Implants",
     subtitle: "Thoracolumbar, Cervical & Interbody Stabilization Technologies",
-    tagline: "Vertebral Stability & Spinal Correction",
-    badge: "Spine Systems Portfolio",
+    tagline: "Vertebral Stability, Spinal Alignment & Consistent Performance",
+    badge: "Spine Solutions Portfolio",
     image: "/images/spine_implants.png",
     description:
-      "Comprehensive spinal fixation systems including pedicle screw constructs, cervical plates, PEEK interbody cages, and minimally invasive spinal deformity correction implants.",
+      "Spine solutions are intended for the treatment of various spinal conditions and injuries. They support different spinal procedures with products designed for dependable use and consistent performance.",
     overviewParagraphs: [
-      "Vartitva Health offers advanced spinal fixation systems designed to assist spine surgeons in stabilizing thoracolumbar fractures, degenerative disc disease, spinal deformities, and cervical pathologies.",
-      "Our spine portfolio encompasses low-profile polyaxial pedicle screw systems, PEEK and Titanium interbody fusion cages, anterior cervical plate constructs, and minimally invasive (MIS) percutaneous instrumentation.",
-      "Every spinal implant is manufactured with ultra-precise tolerances, featuring color-coded surgical kits and ergonomic screwdrivers to enhance intraoperative ease and surgical accuracy.",
+      "Spine solutions are intended for the treatment of various spinal conditions and injuries. They support different spinal procedures with products designed for dependable use and consistent performance.",
+      "Vartitva Health offers spinal stabilization systems designed to assist spine surgeons in treating thoracolumbar fractures, degenerative disc diseases, spondylolisthesis, spinal deformities, and cervical pathologies.",
+      "Our spine solutions encompass low-profile polyaxial pedicle screw systems, PEEK and Titanium interbody fusion cages, anterior cervical plate constructs, and minimally invasive (MIS) percutaneous instrumentation.",
+      "Every spinal system is manufactured to tight dimensional tolerances with color-coded surgical kits and ergonomic instrumentation to support intraoperative precision.",
     ],
     keySpecs: [
       { label: "Pedicle Screw Material", value: "Titanium Alloy (Ti-6Al-4V ELI)" },
-      { label: "Cage Material Options", value: "PEEK (Radiolucent) / 3D Printed Titanium" },
-      { label: "Technique Compatibility", value: "Open & MIS Percutaneous Surgical Approaches" },
-      { label: "Quality Standards", value: "ISO 13485, CE & CDSCO Certified" },
+      { label: "Cage Material Options", value: "Medical Grade PEEK / 3D Titanium" },
+      { label: "Technique Compatibility", value: "Open & MIS Percutaneous Approaches" },
+      { label: "Quality Standards", value: "ISO 13485 & CDSCO Certified" },
     ],
     implantSystems: [
       {
-        name: "Thoracolumbar Pedicle Screw System",
+        name: "Thoracolumbar Polyaxial Pedicle Screw System",
         indication: "Spondylolisthesis, Vertebral Fractures & Spinal Fusion",
         material: "Ti-6Al-4V ELI",
         features: [
-          "Dual-lead thread design for rapid insertion and pullout strength",
-          "60-degree polyaxial screw head angulation facilitating rod insertion",
+          "Dual-lead thread design for rapid insertion and exceptional pullout strength",
+          "60-degree polyaxial screw head angulation facilitating seamless rod insertion",
           "Low-profile tulip head design minimizing soft tissue impaction",
         ],
         specs: "Screw Diameters: 4.5mm to 7.5mm | Lengths: 30mm to 55mm",
@@ -215,17 +216,17 @@ export const CATEGORIES_DATA: Record<string, CategoryData> = {
         features: [
           "Anatomical lordotic angle restoring natural sagittal alignment",
           "Large central graft window accommodating maximum bone graft volume",
-          "Pyramidal teeth surface design preventing cage migration",
+          "Pyramidal anti-migration teeth preventing postoperative cage displacement",
         ],
         specs: "PLIF / TLIF Cages: Heights 8mm to 14mm | Cervical: 5mm to 10mm",
       },
       {
-        name: "Anterior Cervical Plate & Screw System",
+        name: "Anterior Cervical Plate & Screw Systems",
         indication: "Cervical Trauma, Herniated Cervical Discs & Degenerative Instability",
         material: "Ti-6Al-4V Titanium Alloy",
         features: [
           "Ultra-thin 2.0mm plate profile minimizing postoperative dysphagia",
-          "Visual locking mechanism providing tactile verification of screw lock",
+          "Integrated locking mechanism providing visual and tactile verification",
           "Variable and fixed angle locking screws for dynamic load sharing",
         ],
         specs: "1 to 4 Level Plates | Screw Diameters: 3.5mm & 4.0mm",
@@ -234,87 +235,122 @@ export const CATEGORIES_DATA: Record<string, CategoryData> = {
     qualityHighlights: [
       {
         title: "High Pullout Resistance",
-        desc: "Optimized thread geometry delivers maximum pedicle fixation strength even in osteoporotic bone conditions.",
+        desc: "Optimized thread geometry delivers maximum pedicle fixation strength even in compromised bone quality.",
       },
       {
         title: "Radiolucent Imaging",
-        desc: "PEEK cage materials with integrated tantalum markers provide clear intraoperative and postoperative X-ray evaluation.",
+        desc: "PEEK cage materials with integrated tantalum markers provide clear intraoperative and postoperative imaging.",
       },
       {
-        title: "MIS Capability",
-        desc: "Percutaneous extension towers enable minimally invasive surgery with reduced muscle dissection.",
+        title: "MIS Surgical Compatibility",
+        desc: "Percutaneous extension towers enable minimally invasive surgery with reduced tissue disruption.",
       },
     ],
   },
 
-  "neurology-implants": {
-    slug: "neurology-implants",
-    title: "Neurology & Neurosurgical Implants",
-    subtitle: "Cranial Fixation, Dural Repair & Neurosurgical Support Technologies",
-    tagline: "Neurosurgical Precision & Cranial Integrity",
-    badge: "Neurology Portfolio",
-    image: "/images/neurology_implants.png",
+  "arthroscopy-implants": {
+    slug: "arthroscopy-implants",
+    title: "Arthroscopy Implants",
+    subtitle: "Minimally Invasive Sports Medicine & Joint Preservation Solutions",
+    tagline: "Sports Medicine & Minimally Invasive Joint Repair",
+    badge: "Arthroscopy Portfolio",
+    image: "/images/arthroscopy_implants.png",
     description:
-      "Specialized neurosurgical implants including low-profile cranial fixation plates, neuro-mesh, dural substitutes, and shunting systems engineered for neurotrauma and craniotomy procedures.",
+      "Advanced arthroscopy and sports medicine implant solutions for minimally invasive joint reconstruction, ligament repair, and soft-tissue fixation across knee, shoulder, and extremity procedures.",
     overviewParagraphs: [
-      "Vartitva Health delivers specialized neurosurgical implant solutions tailored for neurosurgeons conducting craniotomy closure, cranial reconstruction, neuro-trauma management, and hydrocephalus shunt procedures.",
-      "Our neuro portfolio features micro and mini cranial fixation plate-screw systems, malleable titanium neuro-mesh, synthetic dural matrix substitutes, and hydrocephalus shunt valves manufactured to strict biocompatibility standards.",
-      "We partner with hospital neurosurgery departments in Delhi NCR and across India, providing immediate availability for emergency trauma cases and precision surgical instrumentation.",
+      "Vartitva Health delivers advanced arthroscopy and sports medicine solutions tailored for orthopedic surgeons performing minimally invasive joint preservation and ligament reconstructions.",
+      "Our portfolio includes suture anchors, interference screws, adjustable cortical fixation loops, and meniscal repair systems engineered for high pullout strength and anatomical soft-tissue fixation.",
+      "We provide hospitals across Delhi NCR and Pan-India with surgical instrumentation and prompt case-by-case delivery.",
     ],
     keySpecs: [
-      { label: "Fixation System", value: "1.5mm Micro & 2.0mm Mini Titanium Systems" },
-      { label: "Cranial Mesh", value: "Malleable Titanium Mesh (0.4mm to 0.6mm thickness)" },
-      { label: "Dural Matrix", value: "Biocompatible Synthetic & Collagen Dural Substitutes" },
-      { label: "Compliance", value: "ISO 13485 & CE/CDSCO Certified" },
+      { label: "Suture Anchor Materials", value: "PEEK / Titanium / Biocomposite" },
+      { label: "Interference Screws", value: "Bioabsorbable & Titanium Options" },
+      { label: "Application Areas", value: "ACL/PCL, Rotator Cuff, Labrum & Meniscus" },
+      { label: "Quality Compliance", value: "ISO 13485 & CDSCO Certified" },
     ],
     implantSystems: [
       {
-        name: "Micro & Mini Cranial Fixation System",
-        indication: "Craniotomy Flap Reattachment & Craniofacial Fractures",
-        material: "Pure Titanium (Grade 2/4)",
+        name: "Suture Anchor Systems (Knotless & Threaded)",
+        indication: "Rotator Cuff Repair, Bankart & SLAP Lesion Fixation",
+        material: "PEEK / Titanium with UHMWPE Sutures",
         features: [
-          "Low-profile 0.5mm plate height preventing palpable skin contours",
-          "Self-retaining screw head design for secure engagement on blade",
-          "Color-coded anodized storage module for rapid size selection",
+          "High pullout strength with low insertion torque",
+          "Pre-loaded with ultra-high molecular weight polyethylene sutures",
+          "Knotless tensioning options for streamlined arthroscopic workflow",
         ],
-        specs: "1.5mm & 2.0mm Screws | Straight, T, Y, & Burr-Hole Plates",
+        specs: "Diameters: 2.8mm, 3.5mm, 4.5mm, 5.5mm",
       },
       {
-        name: "3D Malleable Titanium Cranial Mesh",
-        indication: "Complex Cranial Defect Reconstruction & Cranioplasty",
-        material: "Pure Titanium Mesh",
+        name: "Interference Screws & Cortical Button Loops",
+        indication: "ACL & PCL Reconstruction Soft Tissue / BTB Graft Fixation",
+        material: "PEEK / PLLA-HA Biocomposite / Titanium",
         features: [
-          "Easily hand-malleable to match complex 3D cranial vault contours",
-          "Burr-hole spacing allowing fluid drainage and tissue integration",
-          "Compatible with self-tapping 1.5mm micro cranial screws",
+          "Round-thread design preserving graft integrity during insertion",
+          "Adjustable loop buttons allowing precise graft tensioning and retensioning",
+          "Fully cannulated design compatible with standard guide wires",
         ],
-        specs: "Thicknesses: 0.4mm, 0.5mm, 0.6mm | Sizes: 100x100mm to 150x150mm",
-      },
-      {
-        name: "CSF Hydrocephalus Shunt Systems",
-        indication: "Hydrocephalus & Intraventricular Pressure Management",
-        material: "Medical Grade Silicone + Radiolucent Valve Housing",
-        features: [
-          "Low, medium, and high-pressure valve options with anti-siphon mechanism",
-          "Impregnated barium stripe radiopaque silicone catheter tubing",
-          "Self-sealing reservoir dome for intraoperative CSF sampling",
-        ],
-        specs: "Pediatric & Adult Sizes | Fixed & Programmable Valve Options",
+        specs: "Lengths: 20mm to 35mm | Diameters: 7mm to 11mm",
       },
     ],
     qualityHighlights: [
       {
-        title: "Palpability-Free Profile",
-        desc: "Ultra-thin 0.5mm plate profile ensures smooth scalp contour without aesthetic or physical discomfort.",
+        title: "High Soft-Tissue Holding Strength",
+        desc: "Engineered suture and anchor designs ensure secure fixation throughout early rehabilitation.",
       },
       {
-        title: "Biocompatible Integration",
-        desc: "Pure Titanium Grade 2 provides superior cell adhesion and biocompatibility during cranial healing.",
+        title: "Biocompatible Materials",
+        desc: "Tissue-friendly PEEK and biocomposite options minimize inflammatory response.",
       },
       {
         title: "Emergency OR Dispatch",
-        desc: "Immediate inventory availability for neuro-trauma emergencies across Delhi, Gurugram, Sonipat, & North India.",
+        desc: "Ready inventory and instrument support for sports medicine and arthroscopy cases.",
       },
     ],
   },
 };
+
+/**
+ * Slug alias resolver to normalize various slug permutations:
+ * e.g. 'trauma' -> 'trauma-implants'
+ *      'joints' -> 'joint-implants'
+ *      'joints-implant' -> 'joint-implants'
+ *      'spine' -> 'spine-implants'
+ */
+export function getCategoryBySlug(slug: string): CategoryData | undefined {
+  const normalized = slug.toLowerCase().trim();
+
+  const aliasMap: Record<string, string> = {
+    // Trauma aliases
+    "trauma": "trauma-implants",
+    "trauma-implant": "trauma-implants",
+    "trauma-implants": "trauma-implants",
+    "trauma-solutions": "trauma-implants",
+    "orthopaedic-implants": "trauma-implants",
+    "orthopedic-implants": "trauma-implants",
+
+    // Joints aliases
+    "joints": "joint-implants",
+    "joint": "joint-implants",
+    "joints-implant": "joint-implants",
+    "joints-implants": "joint-implants",
+    "joint-implant": "joint-implants",
+    "joint-implants": "joint-implants",
+    "joint-replacement": "joint-implants",
+    "joint-replacement-implants": "joint-implants",
+
+    // Spine aliases
+    "spine": "spine-implants",
+    "spine-implant": "spine-implants",
+    "spine-implants": "spine-implants",
+    "spine-solutions": "spine-implants",
+
+    // Arthroscopy aliases
+    "arthroscopy": "arthroscopy-implants",
+    "arthroscopy-implant": "arthroscopy-implants",
+    "arthroscopy-implants": "arthroscopy-implants",
+    "sports-medicine": "arthroscopy-implants",
+  };
+
+  const key = aliasMap[normalized] || normalized;
+  return CATEGORIES_DATA[key];
+}

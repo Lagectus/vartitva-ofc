@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, MapPin, Menu, X, ArrowRight, Sparkles, ChevronDown } from "lucide-react";
@@ -13,6 +13,32 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleDropdownEnter = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+    setSolutionsDropdownOpen(true);
+  };
+
+  const handleDropdownLeave = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setSolutionsDropdownOpen(false);
+    }, 200);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     let ticking = false;
@@ -72,49 +98,64 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
 
             {/* Solutions Dropdown */}
             <div
-              className="relative py-1 group"
-              onMouseEnter={() => setSolutionsDropdownOpen(true)}
-              onMouseLeave={() => setSolutionsDropdownOpen(false)}
+              className="relative py-2 group"
+              onMouseEnter={handleDropdownEnter}
+              onMouseLeave={handleDropdownLeave}
             >
               <Link
                 href="/#specialities"
                 className={`flex items-center gap-1 transition-colors ${scrolled ? "hover:text-[#d97706]" : "hover:text-amber-300"}`}
               >
                 <span>Solutions</span>
-                <ChevronDown className="w-3.5 h-3.5" />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${solutionsDropdownOpen ? "rotate-180 text-amber-400" : ""}`} />
               </Link>
 
-              {/* Dropdown Menu */}
+              {/* Solutions Dropdown with Seamless Bridge Padding */}
               {solutionsDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 p-3 rounded-2xl bg-white/98 backdrop-blur-2xl border border-amber-200 shadow-2xl space-y-1 animate-in fade-in slide-in-from-top-2 duration-200 text-slate-800">
-                  <Link
-                    href="/categories/trauma-implants"
-                    className="p-2.5 rounded-xl hover:bg-amber-50 flex items-center justify-between text-xs font-bold text-slate-800 hover:text-[#d97706] transition-colors"
-                  >
-                    <span>Trauma Implants</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
-                  </Link>
-                  <Link
-                    href="/categories/joint-implants"
-                    className="p-2.5 rounded-xl hover:bg-amber-50 flex items-center justify-between text-xs font-bold text-slate-800 hover:text-[#d97706] transition-colors"
-                  >
-                    <span>Joint Replacement</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
-                  </Link>
-                  <Link
-                    href="/categories/spine-implants"
-                    className="p-2.5 rounded-xl hover:bg-amber-50 flex items-center justify-between text-xs font-bold text-slate-800 hover:text-[#d97706] transition-colors"
-                  >
-                    <span>Spine Implants</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
-                  </Link>
-                  <Link
-                    href="/categories/arthroscopy-implants"
-                    className="p-2.5 rounded-xl hover:bg-amber-50 flex items-center justify-between text-xs font-bold text-slate-800 hover:text-[#d97706] transition-colors"
-                  >
-                    <span>Arthroscopy Implants</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
-                  </Link>
+                <div
+                  className="absolute top-full left-0 pt-2.5 z-50 animate-in fade-in slide-in-from-top-1 duration-150"
+                  onMouseEnter={handleDropdownEnter}
+                  onMouseLeave={handleDropdownLeave}
+                >
+                  <div className="w-64 p-3 rounded-2xl bg-white/98 backdrop-blur-2xl border border-amber-200 shadow-2xl space-y-1 text-slate-800">
+                    <Link
+                      href="/categories/trauma-implants"
+                      className="p-2.5 rounded-xl hover:bg-amber-50 flex items-center justify-between text-xs font-bold text-slate-800 hover:text-[#d97706] transition-colors"
+                    >
+                      <span>Trauma Implants</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
+                    </Link>
+                    <Link
+                      href="/categories/joint-implants"
+                      className="p-2.5 rounded-xl hover:bg-amber-50 flex items-center justify-between text-xs font-bold text-slate-800 hover:text-[#d97706] transition-colors"
+                    >
+                      <span>Joints Implants</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
+                    </Link>
+                    <Link
+                      href="/categories/spine-implants"
+                      className="p-2.5 rounded-xl hover:bg-amber-50 flex items-center justify-between text-xs font-bold text-slate-800 hover:text-[#d97706] transition-colors"
+                    >
+                      <span>Spine Implants</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
+                    </Link>
+                    <Link
+                      href="/categories/arthroscopy-implants"
+                      className="p-2.5 rounded-xl hover:bg-amber-50 flex items-center justify-between text-xs font-bold text-slate-800 hover:text-[#d97706] transition-colors"
+                    >
+                      <span>Arthroscopy Implants</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
+                    </Link>
+                    <div className="pt-1 border-t border-slate-100">
+                      <Link
+                        href="/categories"
+                        className="p-2 rounded-lg bg-amber-50/80 hover:bg-amber-100/80 flex items-center justify-between text-[11px] font-extrabold text-[#b45309] transition-colors"
+                      >
+                        <span>View All Categories</span>
+                        <ArrowRight className="w-3 h-3 text-[#d97706]" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -190,8 +231,38 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             >
               About Vartitva Health <ArrowRight className="w-4 h-4 text-amber-500" />
             </Link>
+            <Link
+              href="/categories"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-2 border-b border-slate-100 flex items-center justify-between font-bold text-[#b45309]"
+            >
+              Categories / Portfolios <ArrowRight className="w-4 h-4 text-amber-500" />
+            </Link>
+            <div className="pl-3 py-1 space-y-1.5 border-b border-slate-100 text-xs">
+              <Link
+                href="/categories/trauma-implants"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-1 text-slate-700 hover:text-[#d97706]"
+              >
+                • Trauma Implants
+              </Link>
+              <Link
+                href="/categories/joint-implants"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-1 text-slate-700 hover:text-[#d97706]"
+              >
+                • Joints Implants
+              </Link>
+              <Link
+                href="/categories/spine-implants"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-1 text-slate-700 hover:text-[#d97706]"
+              >
+                • Spine Implants
+              </Link>
+            </div>
             <a
-              href="#why-choose-us"
+              href="/#why-choose-us"
               onClick={() => setMobileMenuOpen(false)}
               className="py-2 border-b border-slate-100 flex items-center justify-between"
             >

@@ -9,7 +9,6 @@ import {
   Activity,
   Layers,
   Sparkles,
-  ExternalLink,
 } from "lucide-react";
 import ScrollReveal, { ScrollRevealStagger, ScrollRevealItem } from "@/components/ScrollReveal";
 
@@ -20,62 +19,65 @@ interface SpecialitiesSectionProps {
 export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSectionProps) {
   const solutions = [
     {
-      id: "orthopaedic",
+      id: "trauma",
       number: "01",
       icon: Activity,
       title: "Trauma Implants",
       categoryUrl: "/categories/trauma-implants",
       image: "/images/orthopaedic_implants.png",
+      badge: "Fracture Care & Trauma",
       description:
-        "Dependable orthopaedic implant solutions for trauma care, fracture management, and reconstructive procedures.",
+        "Trauma solutions are designed to support the treatment of fractures, bone injuries, and other orthopedic trauma conditions. They provide practical options for different procedures and help healthcare professionals manage injury-related cases with dependable products.",
+    },
+    {
+      id: "joints",
+      number: "02",
+      icon: Award,
+      title: "Joints Implants",
+      categoryUrl: "/categories/joint-implants",
+      image: "/images/joint_replacement_implants.png",
+      badge: "Joint Restoration",
+      description:
+        "Our Joint solutions focus on supporting the treatment of joint-related conditions and restoring comfortable movement. They are developed for procedures involving commonly treated joints while maintaining focus on quality and dependable clinical use.",
     },
     {
       id: "spine",
-      number: "02",
+      number: "03",
       icon: Layers,
       title: "Spine Implants",
       categoryUrl: "/categories/spine-implants",
       image: "/images/spine_implants.png",
+      badge: "Spinal Stabilization",
       description:
-        "Spine implant solutions developed to support spinal stability, alignment, and reconstructive procedures.",
+        "Spine solutions are intended for the treatment of various spinal conditions and injuries. They support different spinal procedures with products designed for dependable use and consistent performance.",
     },
     {
       id: "arthroscopy",
-      number: "03",
+      number: "04",
       icon: Sparkles,
       title: "Arthroscopy Implants",
       categoryUrl: "/categories/arthroscopy-implants",
       image: "/images/arthroscopy_implants.png",
+      badge: "Sports Medicine",
       description:
-        "Advanced arthroscopy implant solutions for minimally invasive joint repair and reconstructive procedures.",
-    },
-    {
-      id: "joint-replacement",
-      number: "04",
-      icon: Award,
-      title: "Joint Replacement Implants",
-      categoryUrl: "/categories/joint-implants",
-      image: "/images/joint_replacement_implants.png",
-      description:
-        "Joint replacement implant solutions engineered for mobility restoration and long-term joint health.",
+        "Advanced arthroscopy and sports medicine solutions for minimally invasive joint repair, ligament reconstructions, and soft tissue fixation.",
     },
   ];
 
   return (
-    <section id="specialities" className="py-14 bg-white relative overflow-hidden text-slate-900">
+    <section id="specialities" className="py-16 bg-white relative overflow-hidden text-slate-900">
       {/* Background Dots Grid & Soft Glows */}
       <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-amber-50/60 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         {/* Section Header */}
         <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           {/* Top Pill Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-[#b45309] text-xs font-extrabold uppercase tracking-wider border border-amber-300 shadow-xs">
             <ShieldCheck className="w-3.5 h-3.5 text-[#d97706]" />
-            <span>Implant Portfolio</span>
+            <span>Categories & Portfolios</span>
           </div>
 
           {/* Main Title */}
@@ -92,7 +94,7 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
 
           {/* Sub-headline */}
           <h3 className="text-lg sm:text-2xl font-bold text-[#b45309] tracking-tight pt-1">
-            Surgical Implant Solutions Across Key Specialties
+            Surgical Category Solutions Across Key Specialties
           </h3>
         </ScrollReveal>
 
@@ -103,10 +105,8 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
             return (
               <ScrollRevealItem key={item.id} variant="fade-up" className="h-full">
                 <div className="group rounded-[28px] bg-white border border-amber-200/90 hover:border-amber-400/90 shadow-xl shadow-amber-950/5 hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col sm:flex-row justify-between h-full relative">
-                  
                   {/* Left Column: Text Content */}
                   <div className="sm:w-[58%] p-6 sm:p-7 flex flex-col justify-between space-y-4">
-                    
                     <div className="space-y-3">
                       {/* Header Row: Number + Icon + Title */}
                       <div className="flex items-center gap-3">
@@ -128,6 +128,11 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
                           {item.title}
                         </Link>
                       </div>
+
+                      {/* Verbatim Description */}
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-4">
+                        {item.description}
+                      </p>
                     </div>
 
                     {/* Bottom Footer Action Bar */}
@@ -136,11 +141,17 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
                         href={item.categoryUrl}
                         className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#d97706] via-[#f59e0b] to-[#d97706] text-slate-950 font-black text-xs shadow-xs hover:shadow-md transition-all flex items-center gap-1.5 group/btn"
                       >
-                        <span>Explore Our Solutions</span>
+                        <span>View Category Page</span>
                         <ArrowRight className="w-3.5 h-3.5 text-slate-950 group-hover/btn:translate-x-1 transition-transform" />
                       </Link>
-                    </div>
 
+                      <button
+                        onClick={() => onOpenQuote(item.title)}
+                        className="text-xs font-bold text-slate-600 hover:text-[#d97706] transition-colors"
+                      >
+                        Inquire
+                      </button>
+                    </div>
                   </div>
 
                   {/* Right Column: Angled Cutout Showcase Image Frame */}
@@ -153,22 +164,19 @@ export default function SpecialitiesSection({ onOpenQuote }: SpecialitiesSection
                       loading="lazy"
                       className="object-cover group-hover:scale-108 transition-transform duration-700 filter brightness-[0.95]"
                     />
-                    
+
                     {/* Vignette Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-                    
+
                     {/* Orange Diagonal Edge Line Accent */}
                     <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-[#f59e0b] to-[#d97706] hidden sm:block" />
                   </div>
-
                 </div>
               </ScrollRevealItem>
             );
           })}
         </ScrollRevealStagger>
-
       </div>
     </section>
   );
 }
-

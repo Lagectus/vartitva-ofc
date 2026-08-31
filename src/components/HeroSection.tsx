@@ -51,7 +51,7 @@ export default function HeroSection({ onOpenQuote }: HeroSectionProps) {
             </h1>
 
             <h2 className="text-base sm:text-xl font-semibold text-amber-300/90 tracking-wider uppercase max-w-3xl mx-auto">
-              Trauma Implants <span className="text-amber-400">|</span> Joint Replacement <span className="text-amber-400">|</span> Spine Implants <span className="text-amber-400">|</span> Arthroscopy Implants
+              Trauma Implants <span className="text-amber-400">|</span> Joints Implants <span className="text-amber-400">|</span> Spine Implants <span className="text-amber-400">|</span> Arthroscopy Implants
             </h2>
           </div>
         </ScrollReveal>

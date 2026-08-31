@@ -106,7 +106,7 @@ export default function Footer({ onOpenQuote }: FooterProps) {
             {/* Healthcare Solutions */}
             <div className="lg:col-span-2 space-y-4">
               <h4 className="text-sm font-extrabold uppercase tracking-wider text-amber-200">
-                Implants Portfolio
+                Categories
               </h4>
               <ul className="space-y-2.5 text-xs text-slate-400 font-medium">
                 <li>
@@ -116,7 +116,7 @@ export default function Footer({ onOpenQuote }: FooterProps) {
                 </li>
                 <li>
                   <Link href="/categories/joint-implants" className="hover:text-amber-300 transition-colors">
-                    Joint Replacement
+                    Joints Implants
                   </Link>
                 </li>
                 <li>
@@ -127,6 +127,11 @@ export default function Footer({ onOpenQuote }: FooterProps) {
                 <li>
                   <Link href="/categories/arthroscopy-implants" className="hover:text-amber-300 transition-colors">
                     Arthroscopy Implants
+                  </Link>
+                </li>
+                <li className="pt-1">
+                  <Link href="/categories" className="text-amber-400 hover:text-amber-300 font-bold transition-colors">
+                    → All Categories
                   </Link>
                 </li>
               </ul>
