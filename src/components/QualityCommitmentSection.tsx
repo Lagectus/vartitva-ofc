@@ -46,8 +46,8 @@ export default function QualityCommitmentSection() {
                   
                   {/* Generated Image Background */}
                   <Image
-                    src="/images/quality_commitment_lab.png"
-                    alt="Quality Commitment Medical Inspection Lab"
+                    src="/images/quality_commitment_lab.jpg"
+                    alt="Quality Commitment Orthopaedic Implants Inspection"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     loading="lazy"

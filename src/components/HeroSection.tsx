@@ -9,7 +9,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onOpenQuote }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[92vh] pt-32 pb-20 flex items-center justify-center bg-slate-950 overflow-hidden text-white">
+    <section className="relative min-h-screen pt-28 pb-16 flex items-center justify-center bg-slate-950 overflow-hidden text-white">
       {/* Background Video Loop */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
@@ -44,7 +44,7 @@ export default function HeroSection({ onOpenQuote }: HeroSectionProps) {
         <ScrollReveal variant="fade-up" delay={0.15}>
           <div className="space-y-5 max-w-4xl mx-auto">
             <p className="text-2xl sm:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent tracking-tight leading-tight" style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}>
-              ॥ तत् परिवर्तन भव ॥
+              ॥ तत्परिवर्तनं भव ॥
             </p>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] uppercase">
               Shaping the <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent">Future of Healthcare</span>
