@@ -187,7 +187,15 @@ export default function Footer({ onOpenQuote }: FooterProps) {
           <div className="space-y-1 text-center sm:text-left">
             <p>© {new Date().getFullYear()} Vartitva Health Private Limited. All rights reserved.</p>
             <p className="text-[11px] text-amber-300/80 font-medium">
-              Designed & Managed by Promopact Marketing India Pvt. Ltd.
+              Designed & Managed by{" "}
+              <a
+                href="https://promopact.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline hover:text-amber-200 transition-colors"
+              >
+                Promopact Marketing India Pvt. Ltd.
+              </a>
             </p>
           </div>
           <div className="flex items-center gap-6">
