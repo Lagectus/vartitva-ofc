@@ -19,6 +19,28 @@ const QuoteModal = dynamic(() => import("@/components/QuoteModal"));
 export default function AboutPage() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [selectedSpeciality, setSelectedSpeciality] = useState<string>("Orthopaedic Implants");
+  const [hasAutoOpened, setHasAutoOpened] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (hasAutoOpened) return;
+
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+      if (scrollHeight > 0 && scrollTop / scrollHeight >= 0.5) {
+        const alreadyOpened = sessionStorage.getItem("vartitva_quote_auto_opened");
+        if (!alreadyOpened) {
+          setQuoteModalOpen(true);
+          sessionStorage.setItem("vartitva_quote_auto_opened", "true");
+        }
+        setHasAutoOpened(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hasAutoOpened]);
 
   const handleOpenQuote = (specialityName?: string) => {
     if (specialityName) {

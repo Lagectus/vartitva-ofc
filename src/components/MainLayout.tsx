@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -20,6 +20,29 @@ const QuoteModal = dynamic(() => import("./QuoteModal"));
 export default function MainLayout() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [selectedSpeciality, setSelectedSpeciality] = useState<string>("Orthopaedic Implants");
+  const [hasAutoOpened, setHasAutoOpened] = useState(false);
+
+  // Auto-open Quote Form Modal at 50% Scroll Depth
+  useEffect(() => {
+    const handleScroll = () => {
+      if (hasAutoOpened) return;
+
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+      if (scrollHeight > 0 && scrollTop / scrollHeight >= 0.5) {
+        const alreadyOpened = sessionStorage.getItem("vartitva_quote_auto_opened");
+        if (!alreadyOpened) {
+          setQuoteModalOpen(true);
+          sessionStorage.setItem("vartitva_quote_auto_opened", "true");
+        }
+        setHasAutoOpened(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hasAutoOpened]);
 
   const handleOpenQuote = (specialityName?: string) => {
     if (specialityName) {

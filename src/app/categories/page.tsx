@@ -26,6 +26,28 @@ import { CATEGORIES_DATA } from "@/data/categories";
 export default function CategoriesIndexPage() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("All Categories");
+  const [hasAutoOpened, setHasAutoOpened] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (hasAutoOpened) return;
+
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+      if (scrollHeight > 0 && scrollTop / scrollHeight >= 0.5) {
+        const alreadyOpened = sessionStorage.getItem("vartitva_quote_auto_opened");
+        if (!alreadyOpened) {
+          setQuoteModalOpen(true);
+          sessionStorage.setItem("vartitva_quote_auto_opened", "true");
+        }
+        setHasAutoOpened(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hasAutoOpened]);
 
   const handleOpenQuote = (categoryTitle?: string) => {
     setSelectedCategory(categoryTitle || "Category Solutions");
