@@ -20,6 +20,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
+import FloatingContact from "@/components/FloatingContact";
 import { CATEGORIES_DATA } from "@/data/categories";
 
 export default function CategoriesIndexPage() {
@@ -221,6 +222,8 @@ export default function CategoriesIndexPage() {
 
       {/* Footer */}
       <Footer onOpenQuote={() => handleOpenQuote()} />
+
+      <FloatingContact onOpenQuote={() => handleOpenQuote()} />
 
       {/* Quote Modal */}
       {quoteModalOpen && (

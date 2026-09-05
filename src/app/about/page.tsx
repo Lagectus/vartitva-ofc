@@ -10,6 +10,7 @@ import QualityCommitmentSection from "@/components/QualityCommitmentSection";
 import CoverageMapSection from "@/components/CoverageMapSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import FloatingContact from "@/components/FloatingContact";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Building2, ChevronRight, ShieldCheck } from "lucide-react";
 
@@ -78,6 +79,8 @@ export default function AboutPage() {
 
       {/* Footer */}
       <Footer onOpenQuote={() => handleOpenQuote()} />
+
+      <FloatingContact onOpenQuote={() => handleOpenQuote()} />
 
       {/* Direct Quote Request Modal */}
       {quoteModalOpen && (

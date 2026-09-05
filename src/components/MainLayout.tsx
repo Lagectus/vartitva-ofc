@@ -13,6 +13,7 @@ import CoverageMapSection from "@/components/CoverageMapSection";
 import MedicalProcess from "@/components/MedicalProcess";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import FloatingContact from "@/components/FloatingContact";
 
 const QuoteModal = dynamic(() => import("./QuoteModal"));
 
@@ -65,6 +66,9 @@ export default function MainLayout() {
 
       {/* Footer */}
       <Footer onOpenQuote={() => handleOpenQuote()} />
+
+      {/* Right Side Floating Contact & Quote Actions */}
+      <FloatingContact onOpenQuote={() => handleOpenQuote()} />
 
       {/* Direct Quote Request Modal */}
       {quoteModalOpen && (

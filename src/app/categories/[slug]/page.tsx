@@ -22,6 +22,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
+import FloatingContact from "@/components/FloatingContact";
 import ScrollReveal, { ScrollRevealStagger, ScrollRevealItem } from "@/components/ScrollReveal";
 import { CATEGORIES_DATA, getCategoryBySlug } from "@/data/categories";
 
@@ -387,6 +388,8 @@ export default function CategoryPage({ params }: PageProps) {
 
       {/* Footer */}
       <Footer onOpenQuote={() => handleOpenInquiry()} />
+
+      <FloatingContact onOpenQuote={() => handleOpenInquiry()} />
 
       {/* Quote / Spec Sheet Modal */}
       {quoteModalOpen && (
